@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0233)file:///Users/marcobogers/Library/Application%20Support/Claude/local-agent-mode-sessions/49f7f4e3-5e49-45d4-98cf-31b4480f3c32/0cceb3d1-b6b2-4184-8cfe-b9ccd0cb96f0/local_e745fd11-598c-43ac-9061-86ee912e2384/outputs/examen-planner.html -->
+<html lang="nl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Examen Planner</title>
 <style>
@@ -350,29 +350,29 @@
   <div class="stats">
     <div class="stat-card">
       <div class="stat-label">Totaal examens</div>
-      <div class="stat-value" id="stat-total">0</div>
-      <div class="stat-sub" id="stat-total-sub">Geen examens gepland</div>
+      <div class="stat-value" id="stat-total">9</div>
+      <div class="stat-sub" id="stat-total-sub">9 aankomend, 0 afgerond</div>
     </div>
     <div class="stat-card" style="border-left-color: var(--warning)">
       <div class="stat-label">Eerstvolgend examen</div>
-      <div class="stat-value" id="stat-next">–</div>
-      <div class="stat-sub" id="stat-next-sub">Nog niets gepland</div>
+      <div class="stat-value" id="stat-next">20 dagen</div>
+      <div class="stat-sub" id="stat-next-sub">Geschiedenis op maandag 11 mei 2026</div>
     </div>
     <div class="stat-card" style="border-left-color: var(--success)">
       <div class="stat-label">Gemiddelde voortgang</div>
-      <div class="stat-value" id="stat-progress">0%</div>
+      <div class="stat-value" id="stat-progress">6%</div>
       <div class="stat-sub" id="stat-progress-sub">Over alle examens</div>
     </div>
     <div class="stat-card" style="border-left-color: var(--accent)">
       <div class="stat-label">Studie-uren vandaag</div>
-      <div class="stat-value" id="stat-today-hours">0u</div>
+      <div class="stat-value" id="stat-today-hours">0.00u</div>
       <div class="stat-sub">Aanbevolen totaal</div>
     </div>
   </div>
 
   <!-- Settings panel -->
   <div class="section collapsed" id="settings-section">
-    <div class="section-header" onclick="toggleSection('settings-section')">
+    <div class="section-header" onclick="toggleSection(&#39;settings-section&#39;)">
       <div class="section-title">⚙️ Planning-instellingen</div>
       <span class="toggle-icon">▼</span>
     </div>
@@ -380,15 +380,15 @@
       <div class="form-grid">
         <div>
           <label>Max uren per dag</label>
-          <input type="number" id="setting-hours" min="1" max="12" step="0.5" onchange="updateSetting('maxHoursPerDay', parseFloat(this.value))">
+          <input type="number" id="setting-hours" min="1" max="12" step="0.5" onchange="updateSetting(&#39;maxHoursPerDay&#39;, parseFloat(this.value))">
         </div>
         <div>
           <label>Minuten per blok</label>
-          <input type="number" id="setting-blok" min="15" max="120" step="5" onchange="updateSetting('blokMinutes', parseInt(this.value))">
+          <input type="number" id="setting-blok" min="15" max="120" step="5" onchange="updateSetting(&#39;blokMinutes&#39;, parseInt(this.value))">
         </div>
         <div>
           <label>Startdatum schema</label>
-          <input type="date" id="setting-start" onchange="updateSetting('planStart', this.value)">
+          <input type="date" id="setting-start" onchange="updateSetting(&#39;planStart&#39;, this.value)">
         </div>
       </div>
       <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">
@@ -399,16 +399,152 @@
 
   <!-- Full schedule -->
   <div class="section" id="schedule-section">
-    <div class="section-header" onclick="toggleSection('schedule-section')">
+    <div class="section-header" onclick="toggleSection(&#39;schedule-section&#39;)">
       <div class="section-title">📅 Dagplanning (22 apr – 22 mei)</div>
       <span class="toggle-icon">▼</span>
     </div>
     <div class="section-body">
-      <div id="schedule-health"></div>
+      <div id="schedule-health">
+        <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid var(--danger); border-radius: 8px; padding: 16px;">
+          <div style="font-weight: 600; color: var(--danger); margin-bottom: 8px;">⚠️ Tekort in planning: 127.3u</div>
+          <div style="font-size: 13px; margin-bottom: 12px;">
+            Je hebt <strong>264.3u werk</strong> (198 blokken × 1.33u)
+            maar met 6u/dag heb je in 23 studiedagen maar <strong>137.0u</strong>.
+            Gemiddeld heb je <strong>11.49u/dag</strong> nodig om alles te halen.
+          </div>
+          <div style="font-size: 13px; color: var(--muted);">
+            Drie opties om dit op te lossen:
+            <ul style="margin: 8px 0 0 20px;">
+              <li>Meer uren per dag studeren (11.49u/dag nodig)</li>
+              <li>Blokken korter plannen (41 min/blok ipv 80 min om binnen 6u/dag te passen)</li>
+              <li>Niet-essentiële blokken schrappen (vooral extra "Herhalen" en "Examen"-oefeningen)</li>
+            </ul>
+          </div>
+        </div></div>
       <div style="color: var(--muted); font-size: 13px; margin: 12px 0;">
         Max 6u per dag, slim verdeeld op basis van urgentie en prioriteit. Past zich automatisch aan wanneer je onderwerpen afvinkt of examens aanpast.
       </div>
-      <div id="schedule-grid"></div>
+      <div id="schedule-grid"><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">do</span> 23 apr</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1.25u</strong>Economie</span><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">vr</span> 24 apr</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1.25u</strong>Economie</span><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day weekend">
+      <div class="schedule-date"><span class="day-name">za</span> 25 apr</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1.25u</strong>Economie</span><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day weekend">
+      <div class="schedule-date"><span class="day-name">zo</span> 26 apr</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1.25u</strong>Economie</span><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">ma</span> 27 apr</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">5.75u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">di</span> 28 apr</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">5.75u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">wo</span> 29 apr</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">5.75u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">do</span> 30 apr</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">5.75u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">vr</span> 1 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">5.75u</span></div>
+    </div><div class="schedule-day weekend">
+      <div class="schedule-date"><span class="day-name">za</span> 2 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">5.75u</span></div>
+    </div><div class="schedule-day weekend">
+      <div class="schedule-date"><span class="day-name">zo</span> 3 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">ma</span> 4 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Wiskunde A</span><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.25u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">di</span> 5 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Wiskunde A</span><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.25u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">wo</span> 6 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Wiskunde A</span><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.25u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">do</span> 7 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Wiskunde A</span><span class="schedule-chip"><strong>1u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>0.75u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Nederlands</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">vr</span> 8 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Geschiedenis</span><span class="schedule-chip"><strong>0.75u</strong>Nederlands</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>0.75u</strong>Economie</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span><span class="schedule-chip"><strong>0.5u</strong>Biologie</span></div></div>
+      <div><span class="schedule-total">5.75u</span></div>
+    </div><div class="schedule-day weekend">
+      <div class="schedule-date"><span class="day-name">za</span> 9 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1u</strong>Geschiedenis</span><span class="schedule-chip"><strong>1u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Nederlands</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>0.75u</strong>Economie</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span><span class="schedule-chip"><strong>0.5u</strong>Biologie</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day weekend">
+      <div class="schedule-date"><span class="day-name">zo</span> 10 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>1.5u</strong>Geschiedenis</span><span class="schedule-chip"><strong>1u</strong>Wiskunde A</span><span class="schedule-chip"><strong>0.75u</strong>Nederlands</span><span class="schedule-chip"><strong>0.75u</strong>Filosofie</span><span class="schedule-chip"><strong>0.75u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>0.5u</strong>Economie</span><span class="schedule-chip"><strong>0.5u</strong>Biologie</span><span class="schedule-chip"><strong>0.25u</strong>Grieks</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day exam-day">
+      <div class="schedule-date"><span class="day-name">ma</span> 11 mei</div>
+      <div><span class="schedule-exam-tag">📝 Geschiedenis</span></div>
+      <div><span class="schedule-total">EXAMEN</span></div>
+    </div><div class="schedule-day exam-day">
+      <div class="schedule-date"><span class="day-name">di</span> 12 mei</div>
+      <div><span class="schedule-exam-tag">📝 Nederlands</span></div>
+      <div><span class="schedule-total">EXAMEN</span></div>
+    </div><div class="schedule-day exam-day">
+      <div class="schedule-date"><span class="day-name">wo</span> 13 mei</div>
+      <div><span class="schedule-exam-tag">📝 Filosofie</span> <span class="schedule-exam-tag">📝 Wiskunde A</span></div>
+      <div><span class="schedule-total">EXAMEN</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">do</span> 14 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>2.25u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1.5u</strong>Economie</span><span class="schedule-chip"><strong>1.25u</strong>Biologie</span><span class="schedule-chip"><strong>0.75u</strong>Grieks</span><span class="schedule-chip"><strong>0.25u</strong>Engels</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">vr</span> 15 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>2.5u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1.5u</strong>Economie</span><span class="schedule-chip"><strong>1u</strong>Biologie</span><span class="schedule-chip"><strong>0.75u</strong>Grieks</span><span class="schedule-chip"><strong>0.25u</strong>Engels</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day weekend">
+      <div class="schedule-date"><span class="day-name">za</span> 16 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>2.75u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1.25u</strong>Economie</span><span class="schedule-chip"><strong>1u</strong>Biologie</span><span class="schedule-chip"><strong>0.75u</strong>Grieks</span><span class="schedule-chip"><strong>0.25u</strong>Engels</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day weekend">
+      <div class="schedule-date"><span class="day-name">zo</span> 17 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>3.5u</strong>Aardrijkskunde</span><span class="schedule-chip"><strong>1u</strong>Economie</span><span class="schedule-chip"><strong>0.75u</strong>Biologie</span><span class="schedule-chip"><strong>0.5u</strong>Grieks</span><span class="schedule-chip"><strong>0.25u</strong>Engels</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day exam-day">
+      <div class="schedule-date"><span class="day-name">ma</span> 18 mei</div>
+      <div><span class="schedule-exam-tag">📝 Aardrijkskunde</span></div>
+      <div><span class="schedule-total">EXAMEN</span></div>
+    </div><div class="schedule-day">
+      <div class="schedule-date"><span class="day-name">di</span> 19 mei</div>
+      <div><div class="schedule-items"><span class="schedule-chip"><strong>2.5u</strong>Economie</span><span class="schedule-chip"><strong>1.75u</strong>Biologie</span><span class="schedule-chip"><strong>1.25u</strong>Grieks</span><span class="schedule-chip"><strong>0.5u</strong>Engels</span></div></div>
+      <div><span class="schedule-total">6.00u</span></div>
+    </div><div class="schedule-day exam-day">
+      <div class="schedule-date"><span class="day-name">wo</span> 20 mei</div>
+      <div><span class="schedule-exam-tag">📝 Engels</span></div>
+      <div><span class="schedule-total">EXAMEN</span></div>
+    </div><div class="schedule-day exam-day">
+      <div class="schedule-date"><span class="day-name">do</span> 21 mei</div>
+      <div><span class="schedule-exam-tag">📝 Economie</span></div>
+      <div><span class="schedule-total">EXAMEN</span></div>
+    </div><div class="schedule-day exam-day">
+      <div class="schedule-date"><span class="day-name">vr</span> 22 mei</div>
+      <div><span class="schedule-exam-tag">📝 Grieks</span> <span class="schedule-exam-tag">📝 Biologie</span></div>
+      <div><span class="schedule-total">EXAMEN</span></div>
+    </div></div>
     </div>
   </div>
 
@@ -418,13 +554,13 @@
       <div class="section-title">🎯 Studieplan voor vandaag</div>
     </div>
     <div class="section-body">
-      <div class="today-items" id="today-items"></div>
+      <div class="today-items" id="today-items"><div class="empty" style="padding: 16px;">😎 Vandaag vrij! Studieschema start over 2 dagen (donderdag 23 april 2026).</div></div>
     </div>
   </div>
 
   <!-- Add/Edit exam form -->
   <div class="section" id="form-section">
-    <div class="section-header" onclick="toggleSection('form-section')">
+    <div class="section-header" onclick="toggleSection(&#39;form-section&#39;)">
       <div class="section-title" id="form-title">➕ Nieuw examen toevoegen</div>
       <span class="toggle-icon">▼</span>
     </div>
@@ -434,11 +570,11 @@
         <div class="form-grid">
           <div>
             <label>Vak *</label>
-            <input type="text" id="subject" required placeholder="bv. Wiskunde">
+            <input type="text" id="subject" required="" placeholder="bv. Wiskunde">
           </div>
           <div>
             <label>Datum *</label>
-            <input type="date" id="date" required>
+            <input type="date" id="date" required="">
           </div>
           <div>
             <label>Tijd</label>
@@ -452,7 +588,7 @@
             <label>Prioriteit</label>
             <select id="priority">
               <option value="laag">Laag</option>
-              <option value="middel" selected>Middel</option>
+              <option value="middel" selected="">Middel</option>
               <option value="hoog">Hoog</option>
             </select>
           </div>
@@ -461,7 +597,7 @@
             <select id="difficulty">
               <option value="1">1 - Heel makkelijk</option>
               <option value="2">2 - Makkelijk</option>
-              <option value="3" selected>3 - Gemiddeld</option>
+              <option value="3" selected="">3 - Gemiddeld</option>
               <option value="4">4 - Moeilijk</option>
               <option value="5">5 - Heel moeilijk</option>
             </select>
@@ -496,11 +632,1733 @@
           <option value="progress">Sorteer: voortgang</option>
         </select>
         <button class="btn btn-secondary btn-sm" onclick="exportData()">⬇️ Exporteer</button>
-        <button class="btn btn-secondary btn-sm" onclick="document.getElementById('import-file').click()">⬆️ Importeer</button>
+        <button class="btn btn-secondary btn-sm" onclick="document.getElementById(&#39;import-file&#39;).click()">⬆️ Importeer</button>
         <button class="btn btn-secondary btn-sm" onclick="resetToPreloaded()" title="Reset naar originele PDF planning">🔄 Reset naar PDF</button>
         <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)">
       </div>
-      <div class="exams-list" id="exams-list"></div>
+      <div class="exams-list" id="exams-list">
+      <div class="exam-card " data-id="af5ef5d87b">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">Geschiedenis</div>
+            <div class="exam-meta">
+              📅 maandag 11 mei 2026
+              
+              
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-middel">Prio: middel</span>
+              <span class="badge badge-diff">Moeilijkheid: 4/5</span>
+              <span class="badge badge-diff">26.75u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">20 dagen</div>
+            <div class="countdown-label">Tot examen</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>30%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 30%"></div>
+          </div>
+          
+        </div>
+
+        
+
+        <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 Streefcijfer: 8.00 · Voldoende: 4.00 · Risico: groen</div>
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand(&#39;af5ef5d87b&#39;)">
+            📝 Onderwerpen (20)
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam(&#39;af5ef5d87b&#39;)">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam(&#39;af5ef5d87b&#39;)">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          
+          <div class="topic">
+            <input type="checkbox" checked="" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;1e23ee9565&#39;)">
+            <span class="topic-text">Tijdvak 1+2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;1e23ee9565&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" checked="" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;33b3198a8f&#39;)">
+            <span class="topic-text">Tijdvak 3+4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;33b3198a8f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" checked="" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;138928fb0a&#39;)">
+            <span class="topic-text">Tijdvak 5+6</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;138928fb0a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" checked="" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;0ecc9d4f5b&#39;)">
+            <span class="topic-text">Tijdvak 7+8</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;0ecc9d4f5b&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;7a724c3a6e&#39;)">
+            <span class="topic-text">Tijdvak 9+10</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;7a724c3a6e&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" checked="" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;c164b30bee&#39;)">
+            <span class="topic-text">HC Steden en burgers</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;c164b30bee&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" checked="" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;c35644e509&#39;)">
+            <span class="topic-text">HC Verlichting</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;c35644e509&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;f53bd2b6af&#39;)">
+            <span class="topic-text">HC China</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;f53bd2b6af&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;4bb8b6d89b&#39;)">
+            <span class="topic-text">HC Duitsland</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;4bb8b6d89b&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;e4c646541f&#39;)">
+            <span class="topic-text">Tijdlijn maken</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;e4c646541f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;c68c247010&#39;)">
+            <span class="topic-text">Tijdlijn leren</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;c68c247010&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;5e494cc2c1&#39;)">
+            <span class="topic-text">Begrippen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;5e494cc2c1&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;797e019c20&#39;)">
+            <span class="topic-text">Begrippen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;797e019c20&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;aef6a1f971&#39;)">
+            <span class="topic-text">Opdrachten (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;aef6a1f971&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;aa10942302&#39;)">
+            <span class="topic-text">Opdrachten (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;aa10942302&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;c2d6eb836f&#39;)">
+            <span class="topic-text">Examen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;c2d6eb836f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;ac10db736a&#39;)">
+            <span class="topic-text">Examen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;ac10db736a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;986455c857&#39;)">
+            <span class="topic-text">Examen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;986455c857&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;d1e12f9c0a&#39;)">
+            <span class="topic-text">Herhalen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;d1e12f9c0a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;af5ef5d87b&#39;, &#39;e220921fed&#39;)">
+            <span class="topic-text">Herhalen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;af5ef5d87b&#39;, &#39;e220921fed&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="add-topic">
+            <input type="text" id="topic-input-af5ef5d87b" placeholder="Nieuw onderwerp..." onkeydown="if(event.key===&#39;Enter&#39;){event.preventDefault();addTopic(&#39;af5ef5d87b&#39;)}">
+            <button class="btn btn-sm" onclick="addTopic(&#39;af5ef5d87b&#39;)">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="exam-card " data-id="4bdb3996db">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">Nederlands</div>
+            <div class="exam-meta">
+              📅 dinsdag 12 mei 2026
+              
+              
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-middel">Prio: middel</span>
+              <span class="badge badge-diff">Moeilijkheid: 3/5</span>
+              <span class="badge badge-diff">18.75u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">21 dagen</div>
+            <div class="countdown-label">Tot examen</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>7%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 7%"></div>
+          </div>
+          
+        </div>
+
+        
+
+        <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 Streefcijfer: 6.90 · Voldoende: 4.90 · Risico: groen</div>
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand(&#39;4bdb3996db&#39;)">
+            📝 Onderwerpen (14)
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam(&#39;4bdb3996db&#39;)">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam(&#39;4bdb3996db&#39;)">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;3e6328b89a&#39;)">
+            <span class="topic-text">Drogredenen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;3e6328b89a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;e9c1ab17b3&#39;)">
+            <span class="topic-text">Drogredenen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;e9c1ab17b3&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;e02c975e56&#39;)">
+            <span class="topic-text">Drogredenen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;e02c975e56&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;ab15c0dd9a&#39;)">
+            <span class="topic-text">Functiewoorden (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;ab15c0dd9a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;2007b726e6&#39;)">
+            <span class="topic-text">Functiewoorden (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;2007b726e6&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;19816c0955&#39;)">
+            <span class="topic-text">Argumentatiestructuur (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;19816c0955&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;8d2f051a1a&#39;)">
+            <span class="topic-text">Argumentatiestructuur (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;8d2f051a1a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;9d3b226233&#39;)">
+            <span class="topic-text">Arnold Kuipers (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;9d3b226233&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;169a6abd62&#39;)">
+            <span class="topic-text">Arnold Kuipers (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;169a6abd62&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;e0ba51c2a9&#39;)">
+            <span class="topic-text">Quickscan</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;e0ba51c2a9&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" checked="" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;774b72db31&#39;)">
+            <span class="topic-text">Examen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;774b72db31&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;ef2ff1a1e4&#39;)">
+            <span class="topic-text">Examen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;ef2ff1a1e4&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;dcc38c7496&#39;)">
+            <span class="topic-text">Examen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;dcc38c7496&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;4bdb3996db&#39;, &#39;de9b1cfc03&#39;)">
+            <span class="topic-text">Examen (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;4bdb3996db&#39;, &#39;de9b1cfc03&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="add-topic">
+            <input type="text" id="topic-input-4bdb3996db" placeholder="Nieuw onderwerp..." onkeydown="if(event.key===&#39;Enter&#39;){event.preventDefault();addTopic(&#39;4bdb3996db&#39;)}">
+            <button class="btn btn-sm" onclick="addTopic(&#39;4bdb3996db&#39;)">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="exam-card " data-id="1b0f160ad5">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">Filosofie</div>
+            <div class="exam-meta">
+              📅 woensdag 13 mei 2026
+              
+              
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-middel">Prio: middel</span>
+              <span class="badge badge-diff">Moeilijkheid: 4/5</span>
+              <span class="badge badge-diff">28u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">22 dagen</div>
+            <div class="countdown-label">Tot examen</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          
+        </div>
+
+        
+
+        <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 Streefcijfer: 8.17 · Voldoende: 4.17 · Risico: groen</div>
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand(&#39;1b0f160ad5&#39;)">
+            📝 Onderwerpen (21)
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam(&#39;1b0f160ad5&#39;)">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam(&#39;1b0f160ad5&#39;)">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;e48009f29d&#39;)">
+            <span class="topic-text">Inleiding</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;e48009f29d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;e266cfda32&#39;)">
+            <span class="topic-text">Kwestie 1</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;e266cfda32&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;d8c19016a0&#39;)">
+            <span class="topic-text">Kwestie 2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;d8c19016a0&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;3156c989f6&#39;)">
+            <span class="topic-text">Kwestie 3</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;3156c989f6&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;a9a5c58efa&#39;)">
+            <span class="topic-text">Kwestie 4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;a9a5c58efa&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;a8d30c667a&#39;)">
+            <span class="topic-text">Afsluiting</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;a8d30c667a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;102f6eb07c&#39;)">
+            <span class="topic-text">Eindtermen uitwerken/bestuderen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;102f6eb07c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;6cb1692a0a&#39;)">
+            <span class="topic-text">Eindtermen uitwerken/bestuderen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;6cb1692a0a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;6e81b87540&#39;)">
+            <span class="topic-text">Eindtermen uitwerken/bestuderen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;6e81b87540&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;9bb24f0eb3&#39;)">
+            <span class="topic-text">Eindtermen uitwerken/bestuderen (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;9bb24f0eb3&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;9ec105d432&#39;)">
+            <span class="topic-text">Begrippen leren (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;9ec105d432&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;8b6bf83f03&#39;)">
+            <span class="topic-text">Begrippen leren (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;8b6bf83f03&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;7d26404db9&#39;)">
+            <span class="topic-text">Begrippen leren (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;7d26404db9&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;aebdf6ae23&#39;)">
+            <span class="topic-text">Begrippen leren (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;aebdf6ae23&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;219b0356bc&#39;)">
+            <span class="topic-text">Examen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;219b0356bc&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;ae9a49a7ec&#39;)">
+            <span class="topic-text">Examen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;ae9a49a7ec&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;3bae053b34&#39;)">
+            <span class="topic-text">Examen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;3bae053b34&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;b261847ba5&#39;)">
+            <span class="topic-text">Herhalen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;b261847ba5&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;b1735e22fd&#39;)">
+            <span class="topic-text">Herhalen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;b1735e22fd&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;adda919448&#39;)">
+            <span class="topic-text">Herhalen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;adda919448&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;1b0f160ad5&#39;, &#39;055ea14fec&#39;)">
+            <span class="topic-text">Herhalen (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;1b0f160ad5&#39;, &#39;055ea14fec&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="add-topic">
+            <input type="text" id="topic-input-1b0f160ad5" placeholder="Nieuw onderwerp..." onkeydown="if(event.key===&#39;Enter&#39;){event.preventDefault();addTopic(&#39;1b0f160ad5&#39;)}">
+            <button class="btn btn-sm" onclick="addTopic(&#39;1b0f160ad5&#39;)">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="exam-card " data-id="0193c1864d">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">Wiskunde A</div>
+            <div class="exam-meta">
+              📅 woensdag 13 mei 2026
+              
+              
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-middel">Prio: middel</span>
+              <span class="badge badge-diff">Moeilijkheid: 4/5</span>
+              <span class="badge badge-diff">30.75u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">22 dagen</div>
+            <div class="countdown-label">Tot examen</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          
+        </div>
+
+        
+
+        <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 Streefcijfer: 6.58 · Voldoende: 4.58 · Risico: groen</div>
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand(&#39;0193c1864d&#39;)">
+            📝 Onderwerpen (23)
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam(&#39;0193c1864d&#39;)">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam(&#39;0193c1864d&#39;)">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;e5d21047c9&#39;)">
+            <span class="topic-text">H15.1 Algemene vaardigheden</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;e5d21047c9&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;d7b5b31693&#39;)">
+            <span class="topic-text">H15.2 Combinatoriek en Rijen</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;d7b5b31693&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;ce465a2529&#39;)">
+            <span class="topic-text">H15.3 Werken met formules</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;ce465a2529&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;4b36ddcdef&#39;)">
+            <span class="topic-text">H15.4 Formules met exponenten en logaritmen</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;4b36ddcdef&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;4df1bf1829&#39;)">
+            <span class="topic-text">H15.5 Differentiaalrekenen</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;4df1bf1829&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;b86e61074c&#39;)">
+            <span class="topic-text">H15.6 Onderzoeksopgaven</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;b86e61074c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;9e92bf2657&#39;)">
+            <span class="topic-text">§1 Math with menno</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;9e92bf2657&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;7c3309ce37&#39;)">
+            <span class="topic-text">§2 Math with menno</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;7c3309ce37&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;e43cf48fb7&#39;)">
+            <span class="topic-text">§3 Math with menno</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;e43cf48fb7&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;e72dde4e9c&#39;)">
+            <span class="topic-text">§4 Math with menno</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;e72dde4e9c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;df44c8dfa1&#39;)">
+            <span class="topic-text">§5 Math with menno</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;df44c8dfa1&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;23625f4699&#39;)">
+            <span class="topic-text">§6 Math with menno</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;23625f4699&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;427b3ce499&#39;)">
+            <span class="topic-text">Opgaven in boek (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;427b3ce499&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;eeb731323f&#39;)">
+            <span class="topic-text">Opgaven in boek (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;eeb731323f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;2f2fea3e08&#39;)">
+            <span class="topic-text">Opgaven in boek (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;2f2fea3e08&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;543bc0cf5e&#39;)">
+            <span class="topic-text">Opgaven in boek (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;543bc0cf5e&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;63f35662f8&#39;)">
+            <span class="topic-text">Opgaven in boek (5)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;63f35662f8&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;59bd15bb0d&#39;)">
+            <span class="topic-text">Opgaven in boek (6)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;59bd15bb0d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;816882f3b0&#39;)">
+            <span class="topic-text">Examen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;816882f3b0&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;b7c74f7419&#39;)">
+            <span class="topic-text">Examen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;b7c74f7419&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;02b8e7cc8a&#39;)">
+            <span class="topic-text">Examen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;02b8e7cc8a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;817bb8565e&#39;)">
+            <span class="topic-text">Herhalen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;817bb8565e&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;0193c1864d&#39;, &#39;a9ef31252c&#39;)">
+            <span class="topic-text">Herhalen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;0193c1864d&#39;, &#39;a9ef31252c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="add-topic">
+            <input type="text" id="topic-input-0193c1864d" placeholder="Nieuw onderwerp..." onkeydown="if(event.key===&#39;Enter&#39;){event.preventDefault();addTopic(&#39;0193c1864d&#39;)}">
+            <button class="btn btn-sm" onclick="addTopic(&#39;0193c1864d&#39;)">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="exam-card " data-id="c1d0e0ca6f">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">Aardrijkskunde</div>
+            <div class="exam-meta">
+              📅 maandag 18 mei 2026
+              
+              
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-middel">Prio: middel</span>
+              <span class="badge badge-diff">Moeilijkheid: 5/5</span>
+              <span class="badge badge-diff">49.25u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">27 dagen</div>
+            <div class="countdown-label">Tot examen</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          
+        </div>
+
+        
+
+        <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 Streefcijfer: 8.16 · Voldoende: 4.16 · Risico: groen</div>
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand(&#39;c1d0e0ca6f&#39;)">
+            📝 Onderwerpen (37)
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam(&#39;c1d0e0ca6f&#39;)">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam(&#39;c1d0e0ca6f&#39;)">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;f05e326603&#39;)">
+            <span class="topic-text">Wereld H1</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;f05e326603&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;cc511b161a&#39;)">
+            <span class="topic-text">Wereld H2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;cc511b161a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;471e590da7&#39;)">
+            <span class="topic-text">Wereld H3</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;471e590da7&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;c07f9460fa&#39;)">
+            <span class="topic-text">Wereld H4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;c07f9460fa&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;ec178d5606&#39;)">
+            <span class="topic-text">Wereld Begrippen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;ec178d5606&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;0a03cadc46&#39;)">
+            <span class="topic-text">Wereld Begrippen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;0a03cadc46&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;030e32a646&#39;)">
+            <span class="topic-text">Wereld opdrachten (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;030e32a646&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;a838e9f9d3&#39;)">
+            <span class="topic-text">Wereld opdrachten (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;a838e9f9d3&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;8cf8d71d83&#39;)">
+            <span class="topic-text">Aarde H1</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;8cf8d71d83&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;3309923d04&#39;)">
+            <span class="topic-text">Aarde H2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;3309923d04&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;ecb7e754c7&#39;)">
+            <span class="topic-text">Aarde H3</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;ecb7e754c7&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;6cce82a72d&#39;)">
+            <span class="topic-text">Aarde H4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;6cce82a72d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;062c01c8db&#39;)">
+            <span class="topic-text">Aarde Begrippen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;062c01c8db&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;f3c2e6963d&#39;)">
+            <span class="topic-text">Aarde Begrippen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;f3c2e6963d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;b0b685588b&#39;)">
+            <span class="topic-text">Aarde opdrachten (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;b0b685588b&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;b676714554&#39;)">
+            <span class="topic-text">Aarde opdrachten (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;b676714554&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;0baa037080&#39;)">
+            <span class="topic-text">Zuid-Amerika H1</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;0baa037080&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;a31b5fba78&#39;)">
+            <span class="topic-text">Zuid-Amerika H2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;a31b5fba78&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;ae20ecfe5f&#39;)">
+            <span class="topic-text">Zuid-Amerika H3</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;ae20ecfe5f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;6944f1429b&#39;)">
+            <span class="topic-text">Zuid-Amerika H4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;6944f1429b&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;fea585cd05&#39;)">
+            <span class="topic-text">Zuid-Amerika Begrippen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;fea585cd05&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;ad1e1070ab&#39;)">
+            <span class="topic-text">Zuid-Amerika Begrippen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;ad1e1070ab&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;f647741e5f&#39;)">
+            <span class="topic-text">Zuid-Amerika opdrachten (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;f647741e5f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;5ee4f5ab5f&#39;)">
+            <span class="topic-text">Zuid-Amerika opdrachten (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;5ee4f5ab5f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;749ddcbf84&#39;)">
+            <span class="topic-text">Wonen in Nederland H1</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;749ddcbf84&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;42ba83a25d&#39;)">
+            <span class="topic-text">Wonen in Nederland H2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;42ba83a25d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;0db65a822a&#39;)">
+            <span class="topic-text">Wonen in Nederland H3</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;0db65a822a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;7333e98baf&#39;)">
+            <span class="topic-text">Wonen in Nederland H4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;7333e98baf&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;63116566a2&#39;)">
+            <span class="topic-text">Wonen in Nederland Begrippen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;63116566a2&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;5f39a52ec0&#39;)">
+            <span class="topic-text">Wonen in Nederland Begrippen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;5f39a52ec0&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;3290c61c67&#39;)">
+            <span class="topic-text">Wonen in Nederland opdrachten (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;3290c61c67&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;7ccb8f6d42&#39;)">
+            <span class="topic-text">Wonen in Nederland opdrachten (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;7ccb8f6d42&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;122076408a&#39;)">
+            <span class="topic-text">Examen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;122076408a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;9ac56b4521&#39;)">
+            <span class="topic-text">Examen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;9ac56b4521&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;d593f87ce9&#39;)">
+            <span class="topic-text">Herhalen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;d593f87ce9&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;df88e096b3&#39;)">
+            <span class="topic-text">Herhalen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;df88e096b3&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;c1d0e0ca6f&#39;, &#39;997b3cd8d7&#39;)">
+            <span class="topic-text">Herhalen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;c1d0e0ca6f&#39;, &#39;997b3cd8d7&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="add-topic">
+            <input type="text" id="topic-input-c1d0e0ca6f" placeholder="Nieuw onderwerp..." onkeydown="if(event.key===&#39;Enter&#39;){event.preventDefault();addTopic(&#39;c1d0e0ca6f&#39;)}">
+            <button class="btn btn-sm" onclick="addTopic(&#39;c1d0e0ca6f&#39;)">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="exam-card " data-id="2b8b1f9285">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">Engels</div>
+            <div class="exam-meta">
+              📅 woensdag 20 mei 2026
+              
+              
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-laag">Prio: laag</span>
+              <span class="badge badge-diff">Moeilijkheid: 2/5</span>
+              <span class="badge badge-diff">6.75u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">29 dagen</div>
+            <div class="countdown-label">Tot examen</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>20%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 20%"></div>
+          </div>
+          
+        </div>
+
+        
+
+        <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 Streefcijfer: 6.64 · Voldoende: 4.59 · Risico: groen</div>
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand(&#39;2b8b1f9285&#39;)">
+            📝 Onderwerpen (5)
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam(&#39;2b8b1f9285&#39;)">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam(&#39;2b8b1f9285&#39;)">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          
+          <div class="topic">
+            <input type="checkbox" checked="" onchange="toggleTopic(&#39;2b8b1f9285&#39;, &#39;a19d301277&#39;)">
+            <span class="topic-text">Examen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;2b8b1f9285&#39;, &#39;a19d301277&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;2b8b1f9285&#39;, &#39;20e871908f&#39;)">
+            <span class="topic-text">Examen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;2b8b1f9285&#39;, &#39;20e871908f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;2b8b1f9285&#39;, &#39;16f13138ea&#39;)">
+            <span class="topic-text">Examen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;2b8b1f9285&#39;, &#39;16f13138ea&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;2b8b1f9285&#39;, &#39;62c2770899&#39;)">
+            <span class="topic-text">Veelvoorkomende woorden (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;2b8b1f9285&#39;, &#39;62c2770899&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;2b8b1f9285&#39;, &#39;a592702b0a&#39;)">
+            <span class="topic-text">Veelvoorkomende woorden (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;2b8b1f9285&#39;, &#39;a592702b0a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="add-topic">
+            <input type="text" id="topic-input-2b8b1f9285" placeholder="Nieuw onderwerp..." onkeydown="if(event.key===&#39;Enter&#39;){event.preventDefault();addTopic(&#39;2b8b1f9285&#39;)}">
+            <button class="btn btn-sm" onclick="addTopic(&#39;2b8b1f9285&#39;)">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="exam-card " data-id="b826c9252a">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">Economie</div>
+            <div class="exam-meta">
+              📅 donderdag 21 mei 2026
+              
+              
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-hoog">Prio: hoog</span>
+              <span class="badge badge-diff">Moeilijkheid: 5/5</span>
+              <span class="badge badge-diff">40u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">30 dagen</div>
+            <div class="countdown-label">Tot examen</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          
+        </div>
+
+        
+
+        <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 ⚠️ Streefcijfer: 7.26 · Voldoende: 5.26 · Risico: ORANJE — hoogste prioriteit!</div>
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand(&#39;b826c9252a&#39;)">
+            📝 Onderwerpen (30)
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam(&#39;b826c9252a&#39;)">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam(&#39;b826c9252a&#39;)">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;b02ed34de5&#39;)">
+            <span class="topic-text">H1 Geldzaken</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;b02ed34de5&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;d64ea225bd&#39;)">
+            <span class="topic-text">2.1 + 2.2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;d64ea225bd&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;4c3f988e42&#39;)">
+            <span class="topic-text">2.3 + 2.4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;4c3f988e42&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;e705a03eb4&#39;)">
+            <span class="topic-text">3.1 Speltheorie</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;e705a03eb4&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;a0de9a543d&#39;)">
+            <span class="topic-text">4.1 + 4.2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;a0de9a543d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;cf2c3cf86f&#39;)">
+            <span class="topic-text">4.3 + 4.4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;cf2c3cf86f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;08f4343e50&#39;)">
+            <span class="topic-text">4.5</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;08f4343e50&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;a53ded11fc&#39;)">
+            <span class="topic-text">5.1 + 5.2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;a53ded11fc&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;461d633896&#39;)">
+            <span class="topic-text">5.3</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;461d633896&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;f991465739&#39;)">
+            <span class="topic-text">5.4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;f991465739&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;1833ee7339&#39;)">
+            <span class="topic-text">6.1</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;1833ee7339&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;164cf806a1&#39;)">
+            <span class="topic-text">6.2</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;164cf806a1&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;5e97caece2&#39;)">
+            <span class="topic-text">6.3</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;5e97caece2&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;b5d4cc3a0c&#39;)">
+            <span class="topic-text">6.4</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;b5d4cc3a0c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;d355b6ceaa&#39;)">
+            <span class="topic-text">6.5</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;d355b6ceaa&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;b1c79d4195&#39;)">
+            <span class="topic-text">Examentraining H1</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;b1c79d4195&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;7de5fda272&#39;)">
+            <span class="topic-text">Examentraining Domein D</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;7de5fda272&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;86a698e677&#39;)">
+            <span class="topic-text">Examentraining Domein E G H</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;86a698e677&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;0b84458599&#39;)">
+            <span class="topic-text">Examentraining Domein F</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;0b84458599&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;d5379905c5&#39;)">
+            <span class="topic-text">Examentraining Domein I</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;d5379905c5&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;61b5f36e71&#39;)">
+            <span class="topic-text">Examentraining ISBMGA-model</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;61b5f36e71&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;fef793dd07&#39;)">
+            <span class="topic-text">Examen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;fef793dd07&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;8022d55248&#39;)">
+            <span class="topic-text">Examen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;8022d55248&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;4f8c290ed9&#39;)">
+            <span class="topic-text">Examen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;4f8c290ed9&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;bf6c0efb70&#39;)">
+            <span class="topic-text">Examen (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;bf6c0efb70&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;43daebecda&#39;)">
+            <span class="topic-text">Herhalen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;43daebecda&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;82bba596ce&#39;)">
+            <span class="topic-text">Herhalen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;82bba596ce&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;5c833a76c1&#39;)">
+            <span class="topic-text">Herhalen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;5c833a76c1&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;3b88c861b3&#39;)">
+            <span class="topic-text">Herhalen (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;3b88c861b3&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;b826c9252a&#39;, &#39;965dde600b&#39;)">
+            <span class="topic-text">Herhalen (5)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;b826c9252a&#39;, &#39;965dde600b&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="add-topic">
+            <input type="text" id="topic-input-b826c9252a" placeholder="Nieuw onderwerp..." onkeydown="if(event.key===&#39;Enter&#39;){event.preventDefault();addTopic(&#39;b826c9252a&#39;)}">
+            <button class="btn btn-sm" onclick="addTopic(&#39;b826c9252a&#39;)">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="exam-card " data-id="aac2f6d58f">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">Grieks</div>
+            <div class="exam-meta">
+              📅 vrijdag 22 mei 2026
+              
+              
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-middel">Prio: middel</span>
+              <span class="badge badge-diff">Moeilijkheid: 4/5</span>
+              <span class="badge badge-diff">30.75u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">31 dagen</div>
+            <div class="countdown-label">Tot examen</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          
+        </div>
+
+        
+
+        <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 Streefcijfer: 6.88 · Voldoende: 4.88 · Risico: groen</div>
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand(&#39;aac2f6d58f&#39;)">
+            📝 Onderwerpen (23)
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam(&#39;aac2f6d58f&#39;)">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam(&#39;aac2f6d58f&#39;)">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;3842dbca5e&#39;)">
+            <span class="topic-text">Vertalen: Alle grammatica</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;3842dbca5e&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;45eab6089b&#39;)">
+            <span class="topic-text">Vertalen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;45eab6089b&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;b0a904c677&#39;)">
+            <span class="topic-text">Vertalen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;b0a904c677&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;d34d36b5c2&#39;)">
+            <span class="topic-text">Vertalen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;d34d36b5c2&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;29ac2641c8&#39;)">
+            <span class="topic-text">Vertalen (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;29ac2641c8&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;67a6825e8a&#39;)">
+            <span class="topic-text">Verklaren: H1 Prooemium</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;67a6825e8a&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;65a31e69cc&#39;)">
+            <span class="topic-text">Verklaren: H3 Ogygia</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;65a31e69cc&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;12dac90a3c&#39;)">
+            <span class="topic-text">Verklaren: H5 Onderwereld</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;12dac90a3c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;b5fe31388d&#39;)">
+            <span class="topic-text">Verklaren: H8 Odysseus op Ithaka</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;b5fe31388d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;d39044b2a2&#39;)">
+            <span class="topic-text">Verklaren: H10 Wraak</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;d39044b2a2&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;c27480310c&#39;)">
+            <span class="topic-text">H1 vraag 1-9</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;c27480310c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;81ef7701d9&#39;)">
+            <span class="topic-text">H3 vraag 1-28</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;81ef7701d9&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;f10410be6e&#39;)">
+            <span class="topic-text">H5 vraag 1-24</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;f10410be6e&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;7b64f64f72&#39;)">
+            <span class="topic-text">H8 vraag 1-31</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;7b64f64f72&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;900b201314&#39;)">
+            <span class="topic-text">H10 vraag 1-58</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;900b201314&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;0a07a6d9f1&#39;)">
+            <span class="topic-text">Stijlmiddelen</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;0a07a6d9f1&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;df582b5d67&#39;)">
+            <span class="topic-text">Scanderen</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;df582b5d67&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;308ff537ff&#39;)">
+            <span class="topic-text">Herhalen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;308ff537ff&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;3cd45d8cf3&#39;)">
+            <span class="topic-text">Herhalen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;3cd45d8cf3&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;dc53f9a300&#39;)">
+            <span class="topic-text">Herhalen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;dc53f9a300&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;8eae1dc16c&#39;)">
+            <span class="topic-text">Herhalen (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;8eae1dc16c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;1ec2c74a6d&#39;)">
+            <span class="topic-text">Examen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;1ec2c74a6d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;aac2f6d58f&#39;, &#39;385b46ab5f&#39;)">
+            <span class="topic-text">Examen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;aac2f6d58f&#39;, &#39;385b46ab5f&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="add-topic">
+            <input type="text" id="topic-input-aac2f6d58f" placeholder="Nieuw onderwerp..." onkeydown="if(event.key===&#39;Enter&#39;){event.preventDefault();addTopic(&#39;aac2f6d58f&#39;)}">
+            <button class="btn btn-sm" onclick="addTopic(&#39;aac2f6d58f&#39;)">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="exam-card " data-id="abe32368d9">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">Biologie</div>
+            <div class="exam-meta">
+              📅 vrijdag 22 mei 2026
+              
+              
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-middel">Prio: middel</span>
+              <span class="badge badge-diff">Moeilijkheid: 5/5</span>
+              <span class="badge badge-diff">44u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">31 dagen</div>
+            <div class="countdown-label">Tot examen</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>0%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          
+        </div>
+
+        
+
+        <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 Streefcijfer: 6.85 · Voldoende: 4.35 · Risico: groen</div>
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand(&#39;abe32368d9&#39;)">
+            📝 Onderwerpen (33)
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam(&#39;abe32368d9&#39;)">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam(&#39;abe32368d9&#39;)">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;0be809a173&#39;)">
+            <span class="topic-text">H1 Inleiding biologie</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;0be809a173&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;3bad76460d&#39;)">
+            <span class="topic-text">H2 Voortplanting (zonder seksualiteit)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;3bad76460d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;ca65584d0c&#39;)">
+            <span class="topic-text">H3 Genetica</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;ca65584d0c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;20d233a284&#39;)">
+            <span class="topic-text">H4 Evolutie (behalve uitzonderingen)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;20d233a284&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;50114ecd9c&#39;)">
+            <span class="topic-text">H5 Ecologie</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;50114ecd9c&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;0855a10c73&#39;)">
+            <span class="topic-text">H6 Mens en milieu</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;0855a10c73&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;3a6bf55198&#39;)">
+            <span class="topic-text">H7 Regeling (zonder spieren en beweging)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;3a6bf55198&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;a6341e2136&#39;)">
+            <span class="topic-text">H9 Stofwisseling</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;a6341e2136&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;60fa365454&#39;)">
+            <span class="topic-text">H10 DNA (zonder replicatie)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;60fa365454&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;4a75eeec4e&#39;)">
+            <span class="topic-text">H11 Planten</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;4a75eeec4e&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;a0277a8ccf&#39;)">
+            <span class="topic-text">H12 Vertering</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;a0277a8ccf&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;930839f3b7&#39;)">
+            <span class="topic-text">H13 Transport</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;930839f3b7&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;8fecbe0289&#39;)">
+            <span class="topic-text">H14 Gaswisseling &amp; uitscheiding</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;8fecbe0289&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;58af61b070&#39;)">
+            <span class="topic-text">H15 Afweer</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;58af61b070&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;3f0afa8d09&#39;)">
+            <span class="topic-text">H16 Samenhang</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;3f0afa8d09&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;149e545941&#39;)">
+            <span class="topic-text">Test jezelf (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;149e545941&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;f4b8168000&#39;)">
+            <span class="topic-text">Test jezelf (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;f4b8168000&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;603d024e19&#39;)">
+            <span class="topic-text">Test jezelf (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;603d024e19&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;7508902352&#39;)">
+            <span class="topic-text">Test jezelf (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;7508902352&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;03407266af&#39;)">
+            <span class="topic-text">Biologiepagina Oefeningen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;03407266af&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;0f48a9cb96&#39;)">
+            <span class="topic-text">Biologiepagina Oefeningen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;0f48a9cb96&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;b780775b79&#39;)">
+            <span class="topic-text">Biologiepagina Oefeningen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;b780775b79&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;9756e95fbf&#39;)">
+            <span class="topic-text">Biologiepagina Oefeningen (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;9756e95fbf&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;07ab8fd828&#39;)">
+            <span class="topic-text">Begrippen leren (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;07ab8fd828&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;6601eaaeab&#39;)">
+            <span class="topic-text">Begrippen leren (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;6601eaaeab&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;899afebf75&#39;)">
+            <span class="topic-text">Begrippen leren (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;899afebf75&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;3153a18aa7&#39;)">
+            <span class="topic-text">Begrippen leren (4)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;3153a18aa7&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;36e86ab424&#39;)">
+            <span class="topic-text">Examen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;36e86ab424&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;fd1edfe84d&#39;)">
+            <span class="topic-text">Examen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;fd1edfe84d&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;472705ff31&#39;)">
+            <span class="topic-text">Examen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;472705ff31&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;711bc152ed&#39;)">
+            <span class="topic-text">Herhalen (1)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;711bc152ed&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;d780f86d8b&#39;)">
+            <span class="topic-text">Herhalen (2)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;d780f86d8b&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="topic">
+            <input type="checkbox" onchange="toggleTopic(&#39;abe32368d9&#39;, &#39;884a87e4a9&#39;)">
+            <span class="topic-text">Herhalen (3)</span>
+            <button class="btn-icon" onclick="deleteTopic(&#39;abe32368d9&#39;, &#39;884a87e4a9&#39;)" title="Verwijder">✕</button>
+          </div>
+        
+          <div class="add-topic">
+            <input type="text" id="topic-input-abe32368d9" placeholder="Nieuw onderwerp..." onkeydown="if(event.key===&#39;Enter&#39;){event.preventDefault();addTopic(&#39;abe32368d9&#39;)}">
+            <button class="btn btn-sm" onclick="addTopic(&#39;abe32368d9&#39;)">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
@@ -509,9 +2367,9 @@
 const PRIO_WEIGHT = { laag: 1, middel: 1.5, hoog: 2.5 };
 // Instellingen (aanpasbaar via UI, opgeslagen in localStorage)
 const DEFAULT_SETTINGS = {
-  maxHoursPerDay: 6,
-  blokMinutes: 75,
-  planStart: '2026-04-23'
+  maxHoursPerDay: 6,     // Max uren studeren per dag
+  blokMinutes: 75,       // Duur van één blok in minuten
+  planStart: '2026-04-23' // Start van het studieschema
 };
 let settings = { ...DEFAULT_SETTINGS };
 function loadSettings() {
@@ -523,6 +2381,7 @@ function loadSettings() {
 function saveSettings() {
   localStorage.setItem('examen-planner-settings', JSON.stringify(settings));
 }
+// Convenience getters (vervangen de oude constants)
 function MAX_HOURS_PER_DAY() { return settings.maxHoursPerDay; }
 function BLOK_HOURS() { return settings.blokMinutes / 60; }
 function PLAN_START() { return settings.planStart; }
@@ -536,6 +2395,7 @@ function load() {
   } catch (e) { exams = []; }
 }
 
+// Eenmalig: totalHours herberekenen op basis van blokken × huidige BLOK_HOURS
 function migrateToBlokHours() {
   let changed = false;
   for (const e of exams) {
@@ -548,6 +2408,7 @@ function migrateToBlokHours() {
   if (changed) save();
 }
 
+// Alle totalHours opnieuw berekenen (aangeroepen wanneer blok-duur wijzigt)
 function recalcAllTotalHours() {
   for (const e of exams) {
     if (e.topics && e.topics.length > 0) {
@@ -557,6 +2418,7 @@ function recalcAllTotalHours() {
   save();
 }
 
+// Setting wijzigen vanuit UI
 function updateSetting(key, value) {
   settings[key] = value;
   saveSettings();
@@ -564,6 +2426,7 @@ function updateSetting(key, value) {
   render();
 }
 
+// UI synchroniseren met huidige settings
 function syncSettingsUI() {
   const h = document.getElementById('setting-hours');
   const b = document.getElementById('setting-blok');
@@ -572,582 +2435,569 @@ function syncSettingsUI() {
   if (b) b.value = settings.blokMinutes;
   if (s) s.value = settings.planStart;
 }
-  <!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Examen Planner</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #0f172a;
-    --bg-2: #1e293b;
-    --card: #1e293b;
-    --card-2: #334155;
-    --text: #f1f5f9;
-    --muted: #94a3b8;
-    --primary: #8b5cf6;
-    --primary-2: #a78bfa;
-    --accent: #06b6d4;
-    --success: #10b981;
-    --warning: #f59e0b;
-    --danger: #ef4444;
-    --border: #334155;
-  }
-  body.light {
-    --bg: #f8fafc;
-    --bg-2: #ffffff;
-    --card: #ffffff;
-    --card-2: #f1f5f9;
-    --text: #0f172a;
-    --muted: #64748b;
-    --border: #e2e8f0;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    padding: 24px;
-    transition: background 0.3s, color 0.3s;
-  }
-  .container { max-width: 1200px; margin: 0 auto; }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  h1 {
-    font-size: 32px;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .theme-toggle {
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-  .stat-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    border-left: 4px solid var(--primary);
-  }
-  .stat-label { color: var(--muted); font-size: 13px; margin-bottom: 6px; }
-  .stat-value { font-size: 28px; font-weight: 700; }
-  .stat-sub { color: var(--muted); font-size: 12px; margin-top: 4px; }
 
-  .section {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 24px;
-  }
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    cursor: pointer;
-  }
-  .section-title { font-size: 18px; font-weight: 600; }
-  .toggle-icon { color: var(--muted); transition: transform 0.2s; }
-  .collapsed .toggle-icon { transform: rotate(-90deg); }
-  .collapsed .section-body { display: none; }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
-  input, select, textarea {
-    width: 100%;
-    background: var(--bg-2);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 10px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-family: inherit;
-  }
-  body.light input, body.light select, body.light textarea {
-    background: var(--card-2);
-  }
-  input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-  }
-  .btn {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: transform 0.1s, box-shadow 0.2s;
-  }
-  .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); }
-  .btn-secondary { background: var(--card-2); color: var(--text); }
-  .btn-danger { background: var(--danger); }
-  .btn-sm { padding: 6px 12px; font-size: 12px; }
-  .btn-icon { background: transparent; color: var(--muted); padding: 6px; }
-  .btn-icon:hover { color: var(--text); box-shadow: none; transform: none; }
-
-  .exams-list { display: grid; gap: 16px; }
-  .exam-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--primary);
-    border-radius: 12px;
-    padding: 20px;
-    transition: transform 0.2s;
-  }
-  .exam-card:hover { transform: translateY(-2px); }
-  .exam-card.urgent { border-left-color: var(--danger); }
-  .exam-card.soon { border-left-color: var(--warning); }
-  .exam-card.done { opacity: 0.6; }
-
-  .exam-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-  .exam-title { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
-  .exam-meta { color: var(--muted); font-size: 13px; }
-  .countdown {
-    text-align: right;
-    padding: 8px 16px;
-    background: var(--bg-2);
-    border-radius: 8px;
-    min-width: 120px;
-  }
-  body.light .countdown { background: var(--card-2); }
-  .countdown-days { font-size: 24px; font-weight: 700; color: var(--primary); }
-  .countdown-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
-  .urgent .countdown-days { color: var(--danger); }
-  .soon .countdown-days { color: var(--warning); }
-
-  .badges { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
-  .badge {
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-weight: 500;
-  }
-  .badge-prio-hoog { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
-  .badge-prio-middel { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
-  .badge-prio-laag { background: rgba(16, 185, 129, 0.2); color: #10b981; }
-  .badge-diff { background: rgba(139, 92, 246, 0.2); color: var(--primary-2); }
-
-  .progress-wrap { margin: 12px 0; }
-  .progress-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
-  .progress-bar {
-    height: 8px;
-    background: var(--bg-2);
-    border-radius: 999px;
-    overflow: hidden;
-  }
-  body.light .progress-bar { background: var(--card-2); }
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transition: width 0.3s;
-  }
-
-  .study-advice {
-    background: var(--bg-2);
-    border-radius: 8px;
-    padding: 12px;
-    margin: 12px 0;
-    font-size: 13px;
-    border-left: 3px solid var(--accent);
-  }
-  body.light .study-advice { background: var(--card-2); }
-  .study-advice strong { color: var(--accent); }
-
-  .topics-list {
-    margin-top: 12px;
-    display: none;
-  }
-  .exam-card.expanded .topics-list { display: block; }
-  .topic {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 0;
-    font-size: 14px;
-  }
-  .topic input[type="checkbox"] { width: auto; cursor: pointer; }
-  .topic-text { flex: 1; }
-  .topic input[type="checkbox"]:checked + .topic-text {
-    text-decoration: line-through;
-    color: var(--muted);
-  }
-  .add-topic { display: flex; gap: 8px; margin-top: 8px; }
-  .add-topic input { flex: 1; }
-
-  .exam-actions {
-    display: flex;
-    gap: 8px;
-    margin-top: 12px;
-    flex-wrap: wrap;
-  }
-
-  .today-plan-card {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
-    border: 1px solid var(--primary);
-  }
-  .today-items { display: grid; gap: 8px; }
-  .today-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    background: var(--card);
-    border-radius: 8px;
-    border: 1px solid var(--border);
-  }
-  .today-item-subject { font-weight: 600; }
-  .today-item-meta { color: var(--muted); font-size: 13px; }
-  .today-item-hours {
-    background: var(--primary);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  .schedule-day {
-    display: grid;
-    grid-template-columns: 140px 1fr 80px;
-    gap: 12px;
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    align-items: center;
-    font-size: 13px;
-  }
-  .schedule-day:last-child { border-bottom: none; }
-  .schedule-day.weekend { background: rgba(139, 92, 246, 0.04); }
-  .schedule-day.exam-day { background: rgba(239, 68, 68, 0.1); font-weight: 600; }
-  .schedule-day.free { opacity: 0.55; }
-  .schedule-date { color: var(--muted); }
-  .schedule-date .day-name { color: var(--text); font-weight: 500; }
-  .schedule-items { display: flex; flex-wrap: wrap; gap: 6px; }
-  .schedule-chip {
-    background: var(--bg-2);
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-    border: 1px solid var(--border);
-  }
-  body.light .schedule-chip { background: var(--card-2); }
-  .schedule-chip strong { color: var(--primary-2); margin-right: 4px; }
-  .schedule-total {
-    text-align: right;
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-  }
-  .schedule-exam-tag {
-    background: var(--danger);
-    color: white;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 600;
-  }
-  @media (max-width: 640px) {
-    .schedule-day { grid-template-columns: 1fr; gap: 4px; }
-    .schedule-total { text-align: left; }
-  }
-
-  .empty {
-    text-align: center;
-    padding: 48px 24px;
-    color: var(--muted);
-  }
-  .empty-icon { font-size: 48px; margin-bottom: 12px; opacity: 0.5; }
-
-  .toolbar {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-  }
-
-  @media (max-width: 640px) {
-    body { padding: 12px; }
-    h1 { font-size: 24px; }
-    .exam-top { flex-direction: column; }
-    .countdown { text-align: left; width: 100%; }
-  }
-</style>
-</head>
-<body>
-<div class="container">
-  <header>
-    <h1>📚 Examen Planner</h1>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙 Thema</button>
-  </header>
-
-  <div class="stats">
-    <div class="stat-card">
-      <div class="stat-label">Totaal examens</div>
-      <div class="stat-value" id="stat-total">0</div>
-      <div class="stat-sub" id="stat-total-sub">Geen examens gepland</div>
-    </div>
-    <div class="stat-card" style="border-left-color: var(--warning)">
-      <div class="stat-label">Eerstvolgend examen</div>
-      <div class="stat-value" id="stat-next">–</div>
-      <div class="stat-sub" id="stat-next-sub">Nog niets gepland</div>
-    </div>
-    <div class="stat-card" style="border-left-color: var(--success)">
-      <div class="stat-label">Gemiddelde voortgang</div>
-      <div class="stat-value" id="stat-progress">0%</div>
-      <div class="stat-sub" id="stat-progress-sub">Over alle examens</div>
-    </div>
-    <div class="stat-card" style="border-left-color: var(--accent)">
-      <div class="stat-label">Studie-uren vandaag</div>
-      <div class="stat-value" id="stat-today-hours">0u</div>
-      <div class="stat-sub">Aanbevolen totaal</div>
-    </div>
-  </div>
-
-  <!-- Settings panel -->
-  <div class="section collapsed" id="settings-section">
-    <div class="section-header" onclick="toggleSection('settings-section')">
-      <div class="section-title">⚙️ Planning-instellingen</div>
-      <span class="toggle-icon">▼</span>
-    </div>
-    <div class="section-body">
-      <div class="form-grid">
-        <div>
-          <label>Max uren per dag</label>
-          <input type="number" id="setting-hours" min="1" max="12" step="0.5" onchange="updateSetting('maxHoursPerDay', parseFloat(this.value))">
-        </div>
-        <div>
-          <label>Minuten per blok</label>
-          <input type="number" id="setting-blok" min="15" max="120" step="5" onchange="updateSetting('blokMinutes', parseInt(this.value))">
-        </div>
-        <div>
-          <label>Startdatum schema</label>
-          <input type="date" id="setting-start" onchange="updateSetting('planStart', this.value)">
-        </div>
-      </div>
-      <div style="color: var(--muted); font-size: 13px; margin-top: 8px;">
-        💡 Als je de blok-duur wijzigt, worden de totaal-uren per vak automatisch herberekend op basis van het aantal onderwerpen × nieuwe blok-duur.
-      </div>
-    </div>
-  </div>
-
-  <!-- Full schedule -->
-  <div class="section" id="schedule-section">
-    <div class="section-header" onclick="toggleSection('schedule-section')">
-      <div class="section-title">📅 Dagplanning (22 apr – 22 mei)</div>
-      <span class="toggle-icon">▼</span>
-    </div>
-    <div class="section-body">
-      <div id="schedule-health"></div>
-      <div style="color: var(--muted); font-size: 13px; margin: 12px 0;">
-        Max 6u per dag, slim verdeeld op basis van urgentie en prioriteit. Past zich automatisch aan wanneer je onderwerpen afvinkt of examens aanpast.
-      </div>
-      <div id="schedule-grid"></div>
-    </div>
-  </div>
-
-  <!-- Today's plan -->
-  <div class="section today-plan-card" id="today-section">
-    <div class="section-header">
-      <div class="section-title">🎯 Studieplan voor vandaag</div>
-    </div>
-    <div class="section-body">
-      <div class="today-items" id="today-items"></div>
-    </div>
-  </div>
-
-  <!-- Add/Edit exam form -->
-  <div class="section" id="form-section">
-    <div class="section-header" onclick="toggleSection('form-section')">
-      <div class="section-title" id="form-title">➕ Nieuw examen toevoegen</div>
-      <span class="toggle-icon">▼</span>
-    </div>
-    <div class="section-body">
-      <form id="exam-form" onsubmit="saveExam(event)">
-        <input type="hidden" id="exam-id">
-        <div class="form-grid">
-          <div>
-            <label>Vak *</label>
-            <input type="text" id="subject" required placeholder="bv. Wiskunde">
-          </div>
-          <div>
-            <label>Datum *</label>
-            <input type="date" id="date" required>
-          </div>
-          <div>
-            <label>Tijd</label>
-            <input type="time" id="time">
-          </div>
-          <div>
-            <label>Locatie</label>
-            <input type="text" id="location" placeholder="bv. Zaal A1.02">
-          </div>
-          <div>
-            <label>Prioriteit</label>
-            <select id="priority">
-              <option value="laag">Laag</option>
-              <option value="middel" selected>Middel</option>
-              <option value="hoog">Hoog</option>
-            </select>
-          </div>
-          <div>
-            <label>Moeilijkheid (1-5)</label>
-            <select id="difficulty">
-              <option value="1">1 - Heel makkelijk</option>
-              <option value="2">2 - Makkelijk</option>
-              <option value="3" selected>3 - Gemiddeld</option>
-              <option value="4">4 - Moeilijk</option>
-              <option value="5">5 - Heel moeilijk</option>
-            </select>
-          </div>
-          <div>
-            <label>Geschatte studie-uren totaal</label>
-            <input type="number" id="totalHours" min="1" value="20" step="1">
-          </div>
-          <div>
-            <label>Notities</label>
-            <input type="text" id="notes" placeholder="optioneel">
-          </div>
-        </div>
-        <div style="display: flex; gap: 8px;">
-          <button type="submit" class="btn">💾 Opslaan</button>
-          <button type="button" class="btn btn-secondary" onclick="resetForm()">Annuleren</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Exams list -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-title">📋 Jouw examens</div>
-    </div>
-    <div class="section-body">
-      <div class="toolbar">
-        <select id="sort-by" onchange="render()" style="max-width: 200px;">
-          <option value="date">Sorteer: datum</option>
-          <option value="priority">Sorteer: prioriteit</option>
-          <option value="progress">Sorteer: voortgang</option>
-        </select>
-        <button class="btn btn-secondary btn-sm" onclick="exportData()">⬇️ Exporteer</button>
-        <button class="btn btn-secondary btn-sm" onclick="document.getElementById('import-file').click()">⬆️ Importeer</button>
-        <button class="btn btn-secondary btn-sm" onclick="resetToPreloaded()" title="Reset naar originele PDF planning">🔄 Reset naar PDF</button>
-        <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)">
-      </div>
-      <div class="exams-list" id="exams-list"></div>
-    </div>
-  </div>
-</div>
-
-<script>
-const PRIO_WEIGHT = { laag: 1, middel: 1.5, hoog: 2.5 };
-// Instellingen (aanpasbaar via UI, opgeslagen in localStorage)
-const DEFAULT_SETTINGS = {
-  maxHoursPerDay: 6,
-  blokMinutes: 75,
-  planStart: '2026-04-23'
-};
-let settings = { ...DEFAULT_SETTINGS };
-function loadSettings() {
-  try {
-    const raw = localStorage.getItem('examen-planner-settings');
-    if (raw) settings = { ...DEFAULT_SETTINGS, ...JSON.parse(raw) };
-  } catch (e) { settings = { ...DEFAULT_SETTINGS }; }
-}
-function saveSettings() {
-  localStorage.setItem('examen-planner-settings', JSON.stringify(settings));
-}
-function MAX_HOURS_PER_DAY() { return settings.maxHoursPerDay; }
-function BLOK_HOURS() { return settings.blokMinutes / 60; }
-function PLAN_START() { return settings.planStart; }
-
-let exams = [];
-
-function load() {
-  try {
-    const raw = localStorage.getItem('examen-planner-v1');
-    if (raw) exams = JSON.parse(raw);
-  } catch (e) { exams = []; }
+function save() {
+  localStorage.setItem('examen-planner-v1', JSON.stringify(exams));
 }
 
-function migrateToBlokHours() {
-  let changed = false;
-  for (const e of exams) {
-    if (e.topics && e.topics.length > 0 && !e.__hoursV2) {
-      e.totalHours = Math.round(e.topics.length * BLOK_HOURS() * 4) / 4;
-      e.__hoursV2 = true;
-      changed = true;
+function uid() { return Date.now().toString(36) + Math.random().toString(36).substring(2, 6); }
+
+function daysUntil(dateStr) {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const target = new Date(dateStr); target.setHours(0,0,0,0);
+  return Math.round((target - today) / (1000 * 60 * 60 * 24));
+}
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+function getProgress(exam) {
+  if (!exam.topics || exam.topics.length === 0) return exam.manualProgress || 0;
+  const done = exam.topics.filter(t => t.done).length;
+  return Math.round((done / exam.topics.length) * 100);
+}
+
+function remainingHours(exam) {
+  return exam.totalHours * (1 - getProgress(exam) / 100);
+}
+
+// Slimme allocatie voor één dag: verdeelt MAX_HOURS_PER_DAY over actieve vakken
+// op basis van urgentie (uren-nodig-per-dag) en prioriteit.
+function computeAllocationFor(refDate) {
+  const today = new Date(refDate); today.setHours(0,0,0,0);
+  // Als vandaag vóór het plan-start ligt (bv. vandaag is vrij), niets plannen
+  const planStart = new Date(PLAN_START()); planStart.setHours(0,0,0,0);
+  if (today < planStart) return {};
+  // Actief = examen in de toekomst EN nog werk te doen
+  const active = exams
+    .map(e => {
+      const d = new Date(e.date); d.setHours(0,0,0,0);
+      const daysLeft = Math.round((d - today) / (1000 * 60 * 60 * 24));
+      return { exam: e, daysLeft, remaining: remainingHours(e) };
+    })
+    .filter(x => x.daysLeft > 0 && x.remaining > 0.01);
+
+  if (active.length === 0) return {};
+
+  // Per vak: hoe veel uren/dag NODIG om op examen te halen
+  // Prioriteit beïnvloedt het gewicht.
+  const needs = active.map(x => {
+    const urgency = x.remaining / x.daysLeft; // hours/day nodig
+    const weight = urgency * (PRIO_WEIGHT[x.exam.priority] || 1);
+    return { ...x, urgency, weight };
+  });
+
+  const totalUrgency = needs.reduce((s, n) => s + n.urgency, 0);
+  const totalWeight  = needs.reduce((s, n) => s + n.weight,  0);
+
+  // Budget = min(echte behoefte, dagelijkse max)
+  const budget = Math.min(totalUrgency, MAX_HOURS_PER_DAY());
+
+  const allocation = {};
+  for (const n of needs) {
+    if (totalWeight === 0) continue;
+    let h = (n.weight / totalWeight) * budget;
+    h = Math.min(h, n.remaining);
+    h = Math.round(h * 4) / 4;  // kwartier precisie
+    if (h >= 0.25) allocation[n.exam.id] = h;
+  }
+  return allocation;
+}
+
+// Voor het vak-overzicht: hoeveel uur moet je vandaag aan DIT vak besteden?
+function calcDailyHours(exam) {
+  const alloc = computeAllocationFor(new Date());
+  return alloc[exam.id] || 0;
+}
+
+// Dag-voor-dag schema genereren: simuleert allocatie vanaf PLAN_START (of vandaag)
+// tot de laatste examen-datum. Houdt per vak de resterende uren bij.
+function generateFullSchedule() {
+  if (exams.length === 0) return [];
+  const today = new Date(); today.setHours(0,0,0,0);
+  const planStart = new Date(PLAN_START()); planStart.setHours(0,0,0,0);
+  const start = today > planStart ? today : planStart;
+  const lastExam = new Date(Math.max(...exams.map(e => new Date(e.date).getTime())));
+  lastExam.setHours(0,0,0,0);
+
+  // Kopie van remaining-uren die we aftellen per dag
+  const state = exams.map(e => ({
+    id: e.id, subject: e.subject, date: e.date, priority: e.priority,
+    remaining: remainingHours(e)
+  }));
+
+  const schedule = [];
+  const current = new Date(start);
+
+  while (current <= lastExam) {
+    const day = { date: new Date(current), items: [], exams: [], totalHours: 0 };
+
+    // Examens vandaag?
+    for (const s of state) {
+      const d = new Date(s.date); d.setHours(0,0,0,0);
+      if (d.getTime() === current.getTime()) day.exams.push(s.subject);
+    }
+
+    if (day.exams.length === 0) {
+      // Actieve vakken: examen in toekomst, nog uren te doen
+      const active = state
+        .map(s => {
+          const d = new Date(s.date); d.setHours(0,0,0,0);
+          const daysLeft = Math.round((d - current) / (1000*60*60*24));
+          return { s, daysLeft };
+        })
+        .filter(x => x.daysLeft > 0 && x.s.remaining > 0.01);
+
+      if (active.length > 0) {
+        const needs = active.map(x => {
+          const urgency = x.s.remaining / x.daysLeft;
+          const weight = urgency * (PRIO_WEIGHT[x.s.priority] || 1);
+          return { s: x.s, urgency, weight };
+        });
+        const totalUrgency = needs.reduce((a,n) => a + n.urgency, 0);
+        const totalWeight  = needs.reduce((a,n) => a + n.weight,  0);
+        const budget = Math.min(totalUrgency, MAX_HOURS_PER_DAY());
+
+        for (const n of needs) {
+          if (totalWeight === 0) continue;
+          let h = (n.weight / totalWeight) * budget;
+          h = Math.min(h, n.s.remaining);
+          h = Math.round(h * 4) / 4;
+          if (h >= 0.25) {
+            day.items.push({ subject: n.s.subject, hours: h, id: n.s.id });
+            n.s.remaining -= h;
+            day.totalHours += h;
+          }
+        }
+        day.items.sort((a,b) => b.hours - a.hours);
+      }
+    }
+
+    schedule.push(day);
+    current.setDate(current.getDate() + 1);
+  }
+  return schedule;
+}
+
+function renderSchedule() {
+  const grid = document.getElementById('schedule-grid');
+  const health = document.getElementById('schedule-health');
+  if (!grid) return;
+  const schedule = generateFullSchedule();
+  if (schedule.length === 0) {
+    grid.innerHTML = '<div class="empty" style="padding: 16px;">Geen examens gepland.</div>';
+    if (health) health.innerHTML = '';
+    return;
+  }
+
+  // Schema-gezondheid berekenen
+  const totalNeeded = exams.reduce((s,e) => s + remainingHours(e), 0);
+  const totalScheduled = schedule.reduce((s,d) => s + d.totalHours, 0);
+  const shortage = Math.max(0, totalNeeded - totalScheduled);
+  const studyDays = schedule.filter(d => d.exams.length === 0).length;
+  const avgPerDay = studyDays > 0 ? totalNeeded / studyDays : 0;
+
+  if (health) {
+    if (shortage > 0.5) {
+      const extraHoursNeeded = Math.ceil(shortage / studyDays * 100) / 100;
+      const extraMinPerBlok = Math.floor((totalScheduled / (totalNeeded / BLOK_HOURS())) * 60);
+      health.innerHTML = `
+        <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid var(--danger); border-radius: 8px; padding: 16px;">
+          <div style="font-weight: 600; color: var(--danger); margin-bottom: 8px;">⚠️ Tekort in planning: ${shortage.toFixed(1)}u</div>
+          <div style="font-size: 13px; margin-bottom: 12px;">
+            Je hebt <strong>${totalNeeded.toFixed(1)}u werk</strong> (${Math.round(totalNeeded/BLOK_HOURS())} blokken × ${BLOK_HOURS().toFixed(2)}u)
+            maar met ${MAX_HOURS_PER_DAY()}u/dag heb je in ${studyDays} studiedagen maar <strong>${totalScheduled.toFixed(1)}u</strong>.
+            Gemiddeld heb je <strong>${avgPerDay.toFixed(2)}u/dag</strong> nodig om alles te halen.
+          </div>
+          <div style="font-size: 13px; color: var(--muted);">
+            Drie opties om dit op te lossen:
+            <ul style="margin: 8px 0 0 20px;">
+              <li>Meer uren per dag studeren (${avgPerDay.toFixed(2)}u/dag nodig)</li>
+              <li>Blokken korter plannen (${extraMinPerBlok} min/blok ipv ${Math.round(BLOK_HOURS()*60)} min om binnen ${MAX_HOURS_PER_DAY()}u/dag te passen)</li>
+              <li>Niet-essentiële blokken schrappen (vooral extra "Herhalen" en "Examen"-oefeningen)</li>
+            </ul>
+          </div>
+        </div>`;
+    } else {
+      health.innerHTML = `
+        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success); border-radius: 8px; padding: 12px 16px; font-size: 13px;">
+          ✅ Schema past: <strong>${totalNeeded.toFixed(1)}u werk</strong> in ${studyDays} studiedagen, gemiddeld ${avgPerDay.toFixed(2)}u/dag.
+        </div>`;
     }
   }
-  if (changed) save();
+  const dayNames = ['zo','ma','di','wo','do','vr','za'];
+  const monthNames = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+  grid.innerHTML = schedule.map(day => {
+    const dow = day.date.getDay();
+    const isWeekend = dow === 0 || dow === 6;
+    const isExam = day.exams.length > 0;
+    const isFree = !isExam && day.items.length === 0;
+    const cls = ['schedule-day'];
+    if (isWeekend) cls.push('weekend');
+    if (isExam) cls.push('exam-day');
+    if (isFree) cls.push('free');
+    const dateStr = `<span class="day-name">${dayNames[dow]}</span> ${day.date.getDate()} ${monthNames[day.date.getMonth()]}`;
+    let rightCol, middleCol;
+    if (isExam) {
+      middleCol = day.exams.map(s => `<span class="schedule-exam-tag">📝 ${escapeHtml(s)}</span>`).join(' ');
+      rightCol = '<span class="schedule-total">EXAMEN</span>';
+    } else if (isFree) {
+      middleCol = '<span style="color: var(--muted); font-size: 12px;">Rustdag / geen werk meer</span>';
+      rightCol = '<span class="schedule-total">–</span>';
+    } else {
+      middleCol = '<div class="schedule-items">' + day.items.map(i =>
+        `<span class="schedule-chip"><strong>${i.hours}u</strong>${escapeHtml(i.subject)}</span>`
+      ).join('') + '</div>';
+      rightCol = `<span class="schedule-total">${day.totalHours.toFixed(2)}u</span>`;
+    }
+    return `<div class="${cls.join(' ')}">
+      <div class="schedule-date">${dateStr}</div>
+      <div>${middleCol}</div>
+      <div>${rightCol}</div>
+    </div>`;
+  }).join('');
 }
 
-function recalcAllTotalHours() {
-  for (const e of exams) {
-    if (e.topics && e.topics.length > 0) {
-      e.totalHours = Math.round(e.topics.length * BLOK_HOURS() * 4) / 4;
-    }
-  }
+function saveExam(e) {
+  e.preventDefault();
+  const id = document.getElementById('exam-id').value || uid();
+  const existing = exams.find(x => x.id === id);
+  const data = {
+    id,
+    subject: document.getElementById('subject').value.trim(),
+    date: document.getElementById('date').value,
+    time: document.getElementById('time').value,
+    location: document.getElementById('location').value.trim(),
+    priority: document.getElementById('priority').value,
+    difficulty: parseInt(document.getElementById('difficulty').value),
+    totalHours: parseFloat(document.getElementById('totalHours').value) || 20,
+    notes: document.getElementById('notes').value.trim(),
+    topics: existing?.topics || [],
+    manualProgress: existing?.manualProgress || 0,
+    createdAt: existing?.createdAt || new Date().toISOString()
+  };
+  if (existing) Object.assign(existing, data);
+  else exams.push(data);
   save();
-}
-
-function updateSetting(key, value) {
-  settings[key] = value;
-  saveSettings();
-  if (key === 'blokMinutes') recalcAllTotalHours();
+  resetForm();
   render();
 }
 
-function syncSettingsUI() {
-  const h = document.getElementById('setting-hours');
-  const b = document.getElementById('setting-blok');
-  const s = document.getElementById('setting-start');
-  if (h) h.value = settings.maxHoursPerDay;
-  if (b) b.value = settings.blokMinutes;
-  if (s) s.value = settings.planStart;
+function resetForm() {
+  document.getElementById('exam-form').reset();
+  document.getElementById('exam-id').value = '';
+  document.getElementById('form-title').textContent = '➕ Nieuw examen toevoegen';
+  document.getElementById('difficulty').value = '3';
+  document.getElementById('priority').value = 'middel';
+  document.getElementById('totalHours').value = '20';
 }
-  const PRELOADED_EXAMS = [{"id": "af5ef5d87b", "subject": "Geschiedenis", "date": "2026-05-11", "time": "", "location": "", "priority": "middel", "difficulty": 4, "totalHours": 42, "notes": "Streefcijfer: 8.00 · Voldoende: 4.00 · Risico: groen", "topics": [{"id": "1e23ee9565", "text": "Tijdvak 1+2", "done": true}, {"id": "33b3198a8f", "text": "Tijdvak 3+4", "done": true}, {"id": "138928fb0a", "text": "Tijdvak 5+6", "done": true}, {"id": "0ecc9d4f5b", "text": "Tijdvak 7+8", "done": true}, {"id": "7a724c3a6e", "text": "Tijdvak 9+10", "done": false}, {"id": "c164b30bee", "text": "HC Steden en burgers", "done": true}, {"id": "c35644e509", "text": "HC Verlichting", "done": true}, {"id": "f53bd2b6af", "text": "HC China", "done": false}, {"id": "4bb8b6d89b", "text": "HC Duitsland", "done": false}, {"id": "e4c646541f", "text": "Tijdlijn maken", "done": false}, {"id": "c68c247010", "text": "Tijdlijn leren", "done": false}, {"id": "5e494cc2c1", "text": "Begrippen (1)", "done": false}, {"id": "797e019c20", "text": "Begrippen (2)", "done": false}, {"id": "aef6a1f971", "text": "Opdrachten (1)", "done": false}, {"id": "aa10942302", "text": "Opdrachten (2)", "done": false}, {"id": "c2d6eb836f", "text": "Examen (1)", "done": false}, {"id": "ac10db736a", "text": "Examen (2)", "done": false}, {"id": "986455c857", "text": "Examen (3)", "done": false}, {"id": "d1e12f9c0a", "text": "Herhalen (1)", "done": false}, {"id": "e220921fed", "text": "Herhalen (2)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "4bdb3996db", "subject": "Nederlands", "date": "2026-05-12", "time": "", "location": "", "priority": "middel", "difficulty": 3, "totalHours": 28, "notes": "Streefcijfer: 6.90 · Voldoende: 4.90 · Risico: groen", "topics": [{"id": "3e6328b89a", "text": "Drogredenen (1)", "done": false}, {"id": "e9c1ab17b3", "text": "Drogredenen (2)", "done": false}, {"id": "e02c975e56", "text": "Drogredenen (3)", "done": false}, {"id": "ab15c0dd9a", "text": "Functiewoorden (1)", "done": false}, {"id": "2007b726e6", "text": "Functiewoorden (2)", "done": false}, {"id": "19816c0955", "text": "Argumentatiestructuur (1)", "done": false}, {"id": "8d2f051a1a", "text": "Argumentatiestructuur (2)", "done": false}, {"id": "9d3b226233", "text": "Arnold Kuipers (1)", "done": false}, {"id": "169a6abd62", "text": "Arnold Kuipers (2)", "done": false}, {"id": "e0ba51c2a9", "text": "Quickscan", "done": false}, {"id": "774b72db31", "text": "Examen (1)", "done": true}, {"id": "ef2ff1a1e4", "text": "Examen (2)", "done": false}, {"id": "dcc38c7496", "text": "Examen (3)", "done": false}, {"id": "de9b1cfc03", "text": "Examen (4)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "1b0f160ad5", "subject": "Filosofie", "date": "2026-05-13", "time": "", "location": "", "priority": "middel", "difficulty": 4, "totalHours": 42, "notes": "Streefcijfer: 8.17 · Voldoende: 4.17 · Risico: groen", "topics": [{"id": "e48009f29d", "text": "Inleiding", "done": false}, {"id": "e266cfda32", "text": "Kwestie 1", "done": false}, {"id": "d8c19016a0", "text": "Kwestie 2", "done": false}, {"id": "3156c989f6", "text": "Kwestie 3", "done": false}, {"id": "a9a5c58efa", "text": "Kwestie 4", "done": false}, {"id": "a8d30c667a", "text": "Afsluiting", "done": false}, {"id": "102f6eb07c", "text": "Eindtermen uitwerken/bestuderen (1)", "done": false}, {"id": "6cb1692a0a", "text": "Eindtermen uitwerken/bestuderen (2)", "done": false}, {"id": "6e81b87540", "text": "Eindtermen uitwerken/bestuderen (3)", "done": false}, {"id": "9bb24f0eb3", "text": "Eindtermen uitwerken/bestuderen (4)", "done": false}, {"id": "9ec105d432", "text": "Begrippen leren (1)", "done": false}, {"id": "8b6bf83f03", "text": "Begrippen leren (2)", "done": false}, {"id": "7d26404db9", "text": "Begrippen leren (3)", "done": false}, {"id": "aebdf6ae23", "text": "Begrippen leren (4)", "done": false}, {"id": "219b0356bc", "text": "Examen (1)", "done": false}, {"id": "ae9a49a7ec", "text": "Examen (2)", "done": false}, {"id": "3bae053b34", "text": "Examen (3)", "done": false}, {"id": "b261847ba5", "text": "Herhalen (1)", "done": false}, {"id": "b1735e22fd", "text": "Herhalen (2)", "done": false}, {"id": "adda919448", "text": "Herhalen (3)", "done": false}, {"id": "055ea14fec", "text": "Herhalen (4)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "0193c1864d", "subject": "Wiskunde A", "date": "2026-05-13", "time": "", "location": "", "priority": "middel", "difficulty": 4, "totalHours": 46, "notes": "Streefcijfer: 6.58 · Voldoende: 4.58 · Risico: groen", "topics": [{"id": "e5d21047c9", "text": "H15.1 Algemene vaardigheden", "done": false}, {"id": "d7b5b31693", "text": "H15.2 Combinatoriek en Rijen", "done": false}, {"id": "ce465a2529", "text": "H15.3 Werken met formules", "done": false}, {"id": "4b36ddcdef", "text": "H15.4 Formules met exponenten en logaritmen", "done": false}, {"id": "4df1bf1829", "text": "H15.5 Differentiaalrekenen", "done": false}, {"id": "b86e61074c", "text": "H15.6 Onderzoeksopgaven", "done": false}, {"id": "9e92bf2657", "text": "§1 Math with menno", "done": false}, {"id": "7c3309ce37", "text": "§2 Math with menno", "done": false}, {"id": "e43cf48fb7", "text": "§3 Math with menno", "done": false}, {"id": "e72dde4e9c", "text": "§4 Math with menno", "done": false}, {"id": "df44c8dfa1", "text": "§5 Math with menno", "done": false}, {"id": "23625f4699", "text": "§6 Math with menno", "done": false}, {"id": "427b3ce499", "text": "Opgaven in boek (1)", "done": false}, {"id": "eeb731323f", "text": "Opgaven in boek (2)", "done": false}, {"id": "2f2fea3e08", "text": "Opgaven in boek (3)", "done": false}, {"id": "543bc0cf5e", "text": "Opgaven in boek (4)", "done": false}, {"id": "63f35662f8", "text": "Opgaven in boek (5)", "done": false}, {"id": "59bd15bb0d", "text": "Opgaven in boek (6)", "done": false}, {"id": "816882f3b0", "text": "Examen (1)", "done": false}, {"id": "b7c74f7419", "text": "Examen (2)", "done": false}, {"id": "02b8e7cc8a", "text": "Examen (3)", "done": false}, {"id": "817bb8565e", "text": "Herhalen (1)", "done": false}, {"id": "a9ef31252c", "text": "Herhalen (2)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "c1d0e0ca6f", "subject": "Aardrijkskunde", "date": "2026-05-18", "time": "", "location": "", "priority": "middel", "difficulty": 5, "totalHours": 68, "notes": "Streefcijfer: 8.16 · Voldoende: 4.16 · Risico: groen", "topics": [{"id": "f05e326603", "text": "Wereld H1", "done": false}, {"id": "cc511b161a", "text": "Wereld H2", "done": false}, {"id": "471e590da7", "text": "Wereld H3", "done": false}, {"id": "c07f9460fa", "text": "Wereld H4", "done": false}, {"id": "ec178d5606", "text": "Wereld Begrippen (1)", "done": false}, {"id": "0a03cadc46", "text": "Wereld Begrippen (2)", "done": false}, {"id": "030e32a646", "text": "Wereld opdrachten (1)", "done": false}, {"id": "a838e9f9d3", "text": "Wereld opdrachten (2)", "done": false}, {"id": "8cf8d71d83", "text": "Aarde H1", "done": false}, {"id": "3309923d04", "text": "Aarde H2", "done": false}, {"id": "ecb7e754c7", "text": "Aarde H3", "done": false}, {"id": "6cce82a72d", "text": "Aarde H4", "done": false}, {"id": "062c01c8db", "text": "Aarde Begrippen (1)", "done": false}, {"id": "f3c2e6963d", "text": "Aarde Begrippen (2)", "done": false}, {"id": "b0b685588b", "text": "Aarde opdrachten (1)", "done": false}, {"id": "b676714554", "text": "Aarde opdrachten (2)", "done": false}, {"id": "0baa037080", "text": "Zuid-Amerika H1", "done": false}, {"id": "a31b5fba78", "text": "Zuid-Amerika H2", "done": false}, {"id": "ae20ecfe5f", "text": "Zuid-Amerika H3", "done": false}, {"id": "6944f1429b", "text": "Zuid-Amerika H4", "done": false}, {"id": "fea585cd05", "text": "Zuid-Amerika Begrippen (1)", "done": false}, {"id": "ad1e1070ab", "text": "Zuid-Amerika Begrippen (2)", "done": false}, {"id": "f647741e5f", "text": "Zuid-Amerika opdrachten (1)", "done": false}, {"id": "5ee4f5ab5f", "text": "Zuid-Amerika opdrachten (2)", "done": false}, {"id": "749ddcbf84", "text": "Wonen in Nederland H1", "done": false}, {"id": "42ba83a25d", "text": "Wonen in Nederland H2", "done": false}, {"id": "0db65a822a", "text": "Wonen in Nederland H3", "done": false}, {"id": "7333e98baf", "text": "Wonen in Nederland H4", "done": false}, {"id": "63116566a2", "text": "Wonen in Nederland Begrippen (1)", "done": false}, {"id": "5f39a52ec0", "text": "Wonen in Nederland Begrippen (2)", "done": false}, {"id": "3290c61c67", "text": "Wonen in Nederland opdrachten (1)", "done": false}, {"id": "7ccb8f6d42", "text": "Wonen in Nederland opdrachten (2)", "done": false}, {"id": "122076408a", "text": "Examen (1)", "done": false}, {"id": "9ac56b4521", "text": "Examen (2)", "done": false}, {"id": "d593f87ce9", "text": "Herhalen (1)", "done": false}, {"id": "df88e096b3", "text": "Herhalen (2)", "done": false}, {"id": "997b3cd8d7", "text": "Herhalen (3)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "2b8b1f9285", "subject": "Engels", "date": "2026-05-20", "time": "", "location": "", "priority": "laag", "difficulty": 2, "totalHours": 10, "notes": "Streefcijfer: 6.64 · Voldoende: 4.59 · Risico: groen", "topics": [{"id": "a19d301277", "text": "Examen (1)", "done": true}, {"id": "20e871908f", "text": "Examen (2)", "done": false}, {"id": "16f13138ea", "text": "Examen (3)", "done": false}, {"id": "62c2770899", "text": "Veelvoorkomende woorden (1)", "done": false}, {"id": "a592702b0a", "text": "Veelvoorkomende woorden (2)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "b826c9252a", "subject": "Economie", "date": "2026-05-21", "time": "", "location": "", "priority": "hoog", "difficulty": 5, "totalHours": 60, "notes": "⚠️ Streefcijfer: 7.26 · Voldoende: 5.26 · Risico: ORANJE — hoogste prioriteit!", "topics": [{"id": "b02ed34de5", "text": "H1 Geldzaken", "done": false}, {"id": "d64ea225bd", "text": "2.1 + 2.2", "done": false}, {"id": "4c3f988e42", "text": "2.3 + 2.4", "done": false}, {"id": "e705a03eb4", "text": "3.1 Speltheorie", "done": false}, {"id": "a0de9a543d", "text": "4.1 + 4.2", "done": false}, {"id": "cf2c3cf86f", "text": "4.3 + 4.4", "done": false}, {"id": "08f4343e50", "text": "4.5", "done": false}, {"id": "a53ded11fc", "text": "5.1 + 5.2", "done": false}, {"id": "461d633896", "text": "5.3", "done": false}, {"id": "f991465739", "text": "5.4", "done": false}, {"id": "1833ee7339", "text": "6.1", "done": false}, {"id": "164cf806a1", "text": "6.2", "done": false}, {"id": "5e97caece2", "text": "6.3", "done": false}, {"id": "b5d4cc3a0c", "text": "6.4", "done": false}, {"id": "d355b6ceaa", "text": "6.5", "done": false}, {"id": "b1c79d4195", "text": "Examentraining H1", "done": false}, {"id": "7de5fda272", "text": "Examentraining Domein D", "done": false}, {"id": "86a698e677", "text": "Examentraining Domein E G H", "done": false}, {"id": "0b84458599", "text": "Examentraining Domein F", "done": false}, {"id": "d5379905c5", "text": "Examentraining Domein I", "done": false}, {"id": "61b5f36e71", "text": "Examentraining ISBMGA-model", "done": false}, {"id": "fef793dd07", "text": "Examen (1)", "done": false}, {"id": "8022d55248", "text": "Examen (2)", "done": false}, {"id": "4f8c290ed9", "text": "Examen (3)", "done": false}, {"id": "bf6c0efb70", "text": "Examen (4)", "done": false}, {"id": "43daebecda", "text": "Herhalen (1)", "done": false}, {"id": "82bba596ce", "text": "Herhalen (2)", "done": false}, {"id": "5c833a76c1", "text": "Herhalen (3)", "done": false}, {"id": "3b88c861b3", "text": "Herhalen (4)", "done": false}, {"id": "965dde600b", "text": "Herhalen (5)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "aac2f6d58f", "subject": "Grieks", "date": "2026-05-22", "time": "", "location": "", "priority": "middel", "difficulty": 4, "totalHours": 48, "notes": "Streefcijfer: 6.88 · Voldoende: 4.88 · Risico: groen", "topics": [{"id": "3842dbca5e", "text": "Vertalen: Alle grammatica", "done": false}, {"id": "45eab6089b", "text": "Vertalen (1)", "done": false}, {"id": "b0a904c677", "text": "Vertalen (2)", "done": false}, {"id": "d34d36b5c2", "text": "Vertalen (3)", "done": false}, {"id": "29ac2641c8", "text": "Vertalen (4)", "done": false}, {"id": "67a6825e8a", "text": "Verklaren: H1 Prooemium", "done": false}, {"id": "65a31e69cc", "text": "Verklaren: H3 Ogygia", "done": false}, {"id": "12dac90a3c", "text": "Verklaren: H5 Onderwereld", "done": false}, {"id": "b5fe31388d", "text": "Verklaren: H8 Odysseus op Ithaka", "done": false}, {"id": "d39044b2a2", "text": "Verklaren: H10 Wraak", "done": false}, {"id": "c27480310c", "text": "H1 vraag 1-9", "done": false}, {"id": "81ef7701d9", "text": "H3 vraag 1-28", "done": false}, {"id": "f10410be6e", "text": "H5 vraag 1-24", "done": false}, {"id": "7b64f64f72", "text": "H8 vraag 1-31", "done": false}, {"id": "900b201314", "text": "H10 vraag 1-58", "done": false}, {"id": "0a07a6d9f1", "text": "Stijlmiddelen", "done": false}, {"id": "df582b5d67", "text": "Scanderen", "done": false}, {"id": "308ff537ff", "text": "Herhalen (1)", "done": false}, {"id": "3cd45d8cf3", "text": "Herhalen (2)", "done": false}, {"id": "dc53f9a300", "text": "Herhalen (3)", "done": false}, {"id": "8eae1dc16c", "text": "Herhalen (4)", "done": false}, {"id": "1ec2c74a6d", "text": "Examen (1)", "done": false}, {"id": "385b46ab5f", "text": "Examen (2)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "abe32368d9", "subject": "Biologie", "date": "2026-05-22", "time": "", "location": "", "priority": "middel", "difficulty": 5, "totalHours": 66, "notes": "Streefcijfer: 6.85 · Voldoende: 4.35 · Risico: groen", "topics": [{"id": "0be809a173", "text": "H1 Inleiding biologie", "done": false}, {"id": "3bad76460d", "text": "H2 Voortplanting (zonder seksualiteit)", "done": false}, {"id": "ca65584d0c", "text": "H3 Genetica", "done": false}, {"id": "20d233a284", "text": "H4 Evolutie (behalve uitzonderingen)", "done": false}, {"id": "50114ecd9c", "text": "H5 Ecologie", "done": false}, {"id": "0855a10c73", "text": "H6 Mens en milieu", "done": false}, {"id": "3a6bf55198", "text": "H7 Regeling (zonder spieren en beweging)", "done": false}, {"id": "a6341e2136", "text": "H9 Stofwisseling", "done": false}, {"id": "60fa365454", "text": "H10 DNA (zonder replicatie)", "done": false}, {"id": "4a75eeec4e", "text": "H11 Planten", "done": false}, {"id": "a0277a8ccf", "text": "H12 Vertering", "done": false}, {"id": "930839f3b7", "text": "H13 Transport", "done": false}, {"id": "8fecbe0289", "text": "H14 Gaswisseling & uitscheiding", "done": false}, {"id": "58af61b070", "text": "H15 Afweer", "done": false}, {"id": "3f0afa8d09", "text": "H16 Samenhang", "done": false}, {"id": "149e545941", "text": "Test jezelf (1)", "done": false}, {"id": "f4b8168000", "text": "Test jezelf (2)", "done": false}, {"id": "603d024e19", "text": "Test jezelf (3)", "done": false}, {"id": "7508902352", "text": "Test jezelf (4)", "done": false}, {"id": "03407266af", "text": "Biologiepagina Oefeningen (1)", "done": false}, {"id": "0f48a9cb96", "text": "Biologiepagina Oefeningen (2)", "done": false}, {"id": "b780775b79", "text": "Biologiepagina Oefeningen (3)", "done": false}, {"id": "9756e95fbf", "text": "Biologiepagina Oefeningen (4)", "done": false}, {"id": "07ab8fd828", "text": "Begrippen leren (1)", "done": false}, {"id": "6601eaaeab", "text": "Begrippen leren (2)", "done": false}, {"id": "899afebf75", "text": "Begrippen leren (3)", "done": false}, {"id": "3153a18aa7", "text": "Begrippen leren (4)", "done": false}, {"id": "36e86ab424", "text": "Examen (1)", "done": false}, {"id": "fd1edfe84d", "text": "Examen (2)", "done": false}, {"id": "472705ff31", "text": "Examen (3)", "done": false}, {"id": "711bc152ed", "text": "Herhalen (1)", "done": false}, {"id": "d780f86d8b", "text": "Herhalen (2)", "done": false}, {"id": "884a87e4a9", "text": "Herhalen (3)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}];
 
+function editExam(id) {
+  const e = exams.find(x => x.id === id);
+  if (!e) return;
+  document.getElementById('exam-id').value = e.id;
+  document.getElementById('subject').value = e.subject;
+  document.getElementById('date').value = e.date;
+  document.getElementById('time').value = e.time || '';
+  document.getElementById('location').value = e.location || '';
+  document.getElementById('priority').value = e.priority;
+  document.getElementById('difficulty').value = e.difficulty;
+  document.getElementById('totalHours').value = e.totalHours;
+  document.getElementById('notes').value = e.notes || '';
+  document.getElementById('form-title').textContent = '✏️ Examen bewerken';
+  document.getElementById('form-section').classList.remove('collapsed');
+  document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function deleteExam(id) {
+  if (!confirm('Weet je zeker dat je dit examen wilt verwijderen?')) return;
+  exams = exams.filter(x => x.id !== id);
+  save();
+  render();
+}
+
+function toggleExpand(id) {
+  const card = document.querySelector(`[data-id="${id}"]`);
+  if (card) card.classList.toggle('expanded');
+}
+
+function addTopic(id) {
+  const input = document.getElementById(`topic-input-${id}`);
+  const text = input.value.trim();
+  if (!text) return;
+  const exam = exams.find(x => x.id === id);
+  if (!exam.topics) exam.topics = [];
+  exam.topics.push({ id: uid(), text, done: false });
+  input.value = '';
+  save();
+  render();
+  // keep expanded
+  setTimeout(() => {
+    const card = document.querySelector(`[data-id="${id}"]`);
+    if (card) card.classList.add('expanded');
+    const newInput = document.getElementById(`topic-input-${id}`);
+    if (newInput) newInput.focus();
+  }, 0);
+}
+
+function toggleTopic(examId, topicId) {
+  const exam = exams.find(x => x.id === examId);
+  const t = exam.topics.find(x => x.id === topicId);
+  t.done = !t.done;
+  save();
+  render();
+  setTimeout(() => {
+    const card = document.querySelector(`[data-id="${examId}"]`);
+    if (card) card.classList.add('expanded');
+  }, 0);
+}
+
+function deleteTopic(examId, topicId) {
+  const exam = exams.find(x => x.id === examId);
+  exam.topics = exam.topics.filter(x => x.id !== topicId);
+  save();
+  render();
+  setTimeout(() => {
+    const card = document.querySelector(`[data-id="${examId}"]`);
+    if (card) card.classList.add('expanded');
+  }, 0);
+}
+
+function setManualProgress(id, val) {
+  const exam = exams.find(x => x.id === id);
+  exam.manualProgress = parseInt(val);
+  save();
+  render();
+}
+
+function toggleSection(id) {
+  document.getElementById(id).classList.toggle('collapsed');
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('light');
+  localStorage.setItem('examen-theme', document.body.classList.contains('light') ? 'light' : 'dark');
+}
+
+function exportData() {
+  const blob = new Blob([JSON.stringify(exams, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `examens-${new Date().toISOString().split('T')[0]}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importData(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (Array.isArray(data)) {
+        if (confirm(`${data.length} examens importeren? Dit vervangt je huidige planning.`)) {
+          exams = data;
+          save();
+          render();
+        }
+      }
+    } catch (err) { alert('Ongeldig bestand'); }
+  };
+  reader.readAsText(file);
+}
+
+function render() {
+  // Stats
+  document.getElementById('stat-total').textContent = exams.length;
+  const upcoming = exams.filter(e => daysUntil(e.date) >= 0);
+  document.getElementById('stat-total-sub').textContent =
+    upcoming.length + ' aankomend, ' + (exams.length - upcoming.length) + ' afgerond';
+
+  const next = upcoming.sort((a,b) => daysUntil(a.date) - daysUntil(b.date))[0];
+  if (next) {
+    const d = daysUntil(next.date);
+    document.getElementById('stat-next').textContent = d === 0 ? 'Vandaag!' : d + ' dagen';
+    document.getElementById('stat-next-sub').textContent = next.subject + ' op ' + formatDate(next.date);
+  } else {
+    document.getElementById('stat-next').textContent = '–';
+    document.getElementById('stat-next-sub').textContent = 'Nog niets gepland';
+  }
+
+  const avgProgress = exams.length
+    ? Math.round(exams.reduce((s,e) => s + getProgress(e), 0) / exams.length)
+    : 0;
+  document.getElementById('stat-progress').textContent = avgProgress + '%';
+
+  const todayAlloc = computeAllocationFor(new Date());
+  const todayHours = Object.values(todayAlloc).reduce((s,h) => s + h, 0);
+  document.getElementById('stat-today-hours').textContent = todayHours.toFixed(2) + 'u';
+
+  // Dagplanning updaten
+  renderSchedule();
+
+  // Today's plan
+  const todayDiv = document.getElementById('today-items');
+  if (upcoming.length === 0) {
+    todayDiv.innerHTML = '<div class="empty" style="padding: 16px;">Geen examens gepland. Voeg hieronder je eerste examen toe!</div>';
+  } else {
+    const planItems = upcoming
+      .map(e => ({ exam: e, hours: todayAlloc[e.id] || 0 }))
+      .filter(x => x.hours > 0.05)
+      .sort((a,b) => b.hours - a.hours);
+    if (planItems.length === 0) {
+      // Check of vandaag vóór het plan-start ligt
+      const now = new Date(); now.setHours(0,0,0,0);
+      const planStart = new Date(PLAN_START()); planStart.setHours(0,0,0,0);
+      if (now < planStart) {
+        const daysTilStart = Math.round((planStart - now) / (1000*60*60*24));
+        todayDiv.innerHTML = `<div class="empty" style="padding: 16px;">😎 Vandaag vrij! Studieschema start over ${daysTilStart} dag${daysTilStart===1?'':'en'} (${formatDate(PLAN_START())}).</div>`;
+      } else {
+        todayDiv.innerHTML = '<div class="empty" style="padding: 16px;">Alles is af! 🎉</div>';
+      }
+    } else {
+      todayDiv.innerHTML = planItems.map(x => {
+        const days = daysUntil(x.exam.date);
+        return `
+          <div class="today-item">
+            <div>
+              <div class="today-item-subject">${escapeHtml(x.exam.subject)}</div>
+              <div class="today-item-meta">Nog ${days} dag${days===1?'':'en'} · ${getProgress(x.exam)}% klaar</div>
+            </div>
+            <div class="today-item-hours">${x.hours.toFixed(1)}u</div>
+          </div>
+        `;
+      }).join('');
+    }
+  }
+
+  // Exams list
+  const sortBy = document.getElementById('sort-by').value;
+  const sorted = [...exams].sort((a,b) => {
+    if (sortBy === 'date') return new Date(a.date) - new Date(b.date);
+    if (sortBy === 'priority') return (PRIO_WEIGHT[b.priority]||0) - (PRIO_WEIGHT[a.priority]||0);
+    if (sortBy === 'progress') return getProgress(a) - getProgress(b);
+    return 0;
+  });
+
+  const list = document.getElementById('exams-list');
+  if (sorted.length === 0) {
+    list.innerHTML = `
+      <div class="empty">
+        <div class="empty-icon">📚</div>
+        <div>Nog geen examens gepland.</div>
+        <div style="margin-top: 8px;">Voeg hierboven je eerste examen toe om te beginnen!</div>
+      </div>
+    `;
+    return;
+  }
+
+  list.innerHTML = sorted.map(e => {
+    const days = daysUntil(e.date);
+    const progress = getProgress(e);
+    const dailyH = calcDailyHours(e);
+    let urgency = '';
+    if (days < 0) urgency = 'done';
+    else if (days <= 3) urgency = 'urgent';
+    else if (days <= 7) urgency = 'soon';
+
+    const countdownText = days < 0
+      ? `${Math.abs(days)} dagen geleden`
+      : days === 0 ? 'VANDAAG!'
+      : days === 1 ? 'Morgen'
+      : `${days} dagen`;
+
+    const topicsHtml = (e.topics && e.topics.length > 0)
+      ? e.topics.map(t => `
+          <div class="topic">
+            <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTopic('${e.id}', '${t.id}')">
+            <span class="topic-text">${escapeHtml(t.text)}</span>
+            <button class="btn-icon" onclick="deleteTopic('${e.id}', '${t.id}')" title="Verwijder">✕</button>
+          </div>
+        `).join('')
+      : '<div style="color: var(--muted); font-size: 13px; padding: 8px 0;">Nog geen onderwerpen. Voeg er hieronder een toe om een checklist te maken.</div>';
+
+    const progressControl = (!e.topics || e.topics.length === 0)
+      ? `<input type="range" min="0" max="100" value="${e.manualProgress || 0}"
+           oninput="setManualProgress('${e.id}', this.value)" style="margin-top: 8px;">`
+      : '';
+
+    return `
+      <div class="exam-card ${urgency}" data-id="${e.id}">
+        <div class="exam-top">
+          <div>
+            <div class="exam-title">${escapeHtml(e.subject)}</div>
+            <div class="exam-meta">
+              📅 ${formatDate(e.date)}
+              ${e.time ? ' · 🕐 ' + e.time : ''}
+              ${e.location ? ' · 📍 ' + escapeHtml(e.location) : ''}
+            </div>
+            <div class="badges">
+              <span class="badge badge-prio-${e.priority}">Prio: ${e.priority}</span>
+              <span class="badge badge-diff">Moeilijkheid: ${e.difficulty}/5</span>
+              <span class="badge badge-diff">${e.totalHours}u totaal</span>
+            </div>
+          </div>
+          <div class="countdown">
+            <div class="countdown-days">${countdownText}</div>
+            <div class="countdown-label">${days < 0 ? 'Afgelopen' : 'Tot examen'}</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-header">
+            <span>Voortgang</span>
+            <strong>${progress}%</strong>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: ${progress}%"></div>
+          </div>
+          ${progressControl}
+        </div>
+
+        ${days >= 0 && dailyH > 0.05 ? `
+          <div class="study-advice">
+            📖 <strong>Advies:</strong> studeer vandaag ongeveer <strong>${dailyH.toFixed(1)} uur</strong>
+            ${days > 0 ? `om op schema te blijven (${Math.round(e.totalHours * (1-progress/100))}u nog te gaan in ${days} dag${days===1?'':'en'})` : ''}
+          </div>
+        ` : ''}
+
+        ${e.notes ? `<div style="color: var(--muted); font-size: 13px; margin-top: 8px;">💭 ${escapeHtml(e.notes)}</div>` : ''}
+
+        <div class="exam-actions">
+          <button class="btn btn-sm btn-secondary" onclick="toggleExpand('${e.id}')">
+            📝 Onderwerpen (${e.topics?.length || 0})
+          </button>
+          <button class="btn btn-sm btn-secondary" onclick="editExam('${e.id}')">✏️ Bewerk</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteExam('${e.id}')">🗑️ Verwijder</button>
+        </div>
+
+        <div class="topics-list">
+          <div style="font-weight: 600; margin-bottom: 8px; margin-top: 8px;">Studie-onderwerpen / checklist</div>
+          ${topicsHtml}
+          <div class="add-topic">
+            <input type="text" id="topic-input-${e.id}" placeholder="Nieuw onderwerp..."
+              onkeydown="if(event.key==='Enter'){event.preventDefault();addTopic('${e.id}')}">
+            <button class="btn btn-sm" onclick="addTopic('${e.id}')">+ Toevoegen</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// Preloaded exam data (from Marco's PDF planning)
+const PRELOADED_EXAMS = [{"id": "af5ef5d87b", "subject": "Geschiedenis", "date": "2026-05-11", "time": "", "location": "", "priority": "middel", "difficulty": 4, "totalHours": 42, "notes": "Streefcijfer: 8.00 · Voldoende: 4.00 · Risico: groen", "topics": [{"id": "1e23ee9565", "text": "Tijdvak 1+2", "done": true}, {"id": "33b3198a8f", "text": "Tijdvak 3+4", "done": true}, {"id": "138928fb0a", "text": "Tijdvak 5+6", "done": true}, {"id": "0ecc9d4f5b", "text": "Tijdvak 7+8", "done": true}, {"id": "7a724c3a6e", "text": "Tijdvak 9+10", "done": false}, {"id": "c164b30bee", "text": "HC Steden en burgers", "done": true}, {"id": "c35644e509", "text": "HC Verlichting", "done": true}, {"id": "f53bd2b6af", "text": "HC China", "done": false}, {"id": "4bb8b6d89b", "text": "HC Duitsland", "done": false}, {"id": "e4c646541f", "text": "Tijdlijn maken", "done": false}, {"id": "c68c247010", "text": "Tijdlijn leren", "done": false}, {"id": "5e494cc2c1", "text": "Begrippen (1)", "done": false}, {"id": "797e019c20", "text": "Begrippen (2)", "done": false}, {"id": "aef6a1f971", "text": "Opdrachten (1)", "done": false}, {"id": "aa10942302", "text": "Opdrachten (2)", "done": false}, {"id": "c2d6eb836f", "text": "Examen (1)", "done": false}, {"id": "ac10db736a", "text": "Examen (2)", "done": false}, {"id": "986455c857", "text": "Examen (3)", "done": false}, {"id": "d1e12f9c0a", "text": "Herhalen (1)", "done": false}, {"id": "e220921fed", "text": "Herhalen (2)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "4bdb3996db", "subject": "Nederlands", "date": "2026-05-12", "time": "", "location": "", "priority": "middel", "difficulty": 3, "totalHours": 28, "notes": "Streefcijfer: 6.90 · Voldoende: 4.90 · Risico: groen", "topics": [{"id": "3e6328b89a", "text": "Drogredenen (1)", "done": false}, {"id": "e9c1ab17b3", "text": "Drogredenen (2)", "done": false}, {"id": "e02c975e56", "text": "Drogredenen (3)", "done": false}, {"id": "ab15c0dd9a", "text": "Functiewoorden (1)", "done": false}, {"id": "2007b726e6", "text": "Functiewoorden (2)", "done": false}, {"id": "19816c0955", "text": "Argumentatiestructuur (1)", "done": false}, {"id": "8d2f051a1a", "text": "Argumentatiestructuur (2)", "done": false}, {"id": "9d3b226233", "text": "Arnold Kuipers (1)", "done": false}, {"id": "169a6abd62", "text": "Arnold Kuipers (2)", "done": false}, {"id": "e0ba51c2a9", "text": "Quickscan", "done": false}, {"id": "774b72db31", "text": "Examen (1)", "done": true}, {"id": "ef2ff1a1e4", "text": "Examen (2)", "done": false}, {"id": "dcc38c7496", "text": "Examen (3)", "done": false}, {"id": "de9b1cfc03", "text": "Examen (4)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "1b0f160ad5", "subject": "Filosofie", "date": "2026-05-13", "time": "", "location": "", "priority": "middel", "difficulty": 4, "totalHours": 42, "notes": "Streefcijfer: 8.17 · Voldoende: 4.17 · Risico: groen", "topics": [{"id": "e48009f29d", "text": "Inleiding", "done": false}, {"id": "e266cfda32", "text": "Kwestie 1", "done": false}, {"id": "d8c19016a0", "text": "Kwestie 2", "done": false}, {"id": "3156c989f6", "text": "Kwestie 3", "done": false}, {"id": "a9a5c58efa", "text": "Kwestie 4", "done": false}, {"id": "a8d30c667a", "text": "Afsluiting", "done": false}, {"id": "102f6eb07c", "text": "Eindtermen uitwerken/bestuderen (1)", "done": false}, {"id": "6cb1692a0a", "text": "Eindtermen uitwerken/bestuderen (2)", "done": false}, {"id": "6e81b87540", "text": "Eindtermen uitwerken/bestuderen (3)", "done": false}, {"id": "9bb24f0eb3", "text": "Eindtermen uitwerken/bestuderen (4)", "done": false}, {"id": "9ec105d432", "text": "Begrippen leren (1)", "done": false}, {"id": "8b6bf83f03", "text": "Begrippen leren (2)", "done": false}, {"id": "7d26404db9", "text": "Begrippen leren (3)", "done": false}, {"id": "aebdf6ae23", "text": "Begrippen leren (4)", "done": false}, {"id": "219b0356bc", "text": "Examen (1)", "done": false}, {"id": "ae9a49a7ec", "text": "Examen (2)", "done": false}, {"id": "3bae053b34", "text": "Examen (3)", "done": false}, {"id": "b261847ba5", "text": "Herhalen (1)", "done": false}, {"id": "b1735e22fd", "text": "Herhalen (2)", "done": false}, {"id": "adda919448", "text": "Herhalen (3)", "done": false}, {"id": "055ea14fec", "text": "Herhalen (4)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "0193c1864d", "subject": "Wiskunde A", "date": "2026-05-13", "time": "", "location": "", "priority": "middel", "difficulty": 4, "totalHours": 46, "notes": "Streefcijfer: 6.58 · Voldoende: 4.58 · Risico: groen", "topics": [{"id": "e5d21047c9", "text": "H15.1 Algemene vaardigheden", "done": false}, {"id": "d7b5b31693", "text": "H15.2 Combinatoriek en Rijen", "done": false}, {"id": "ce465a2529", "text": "H15.3 Werken met formules", "done": false}, {"id": "4b36ddcdef", "text": "H15.4 Formules met exponenten en logaritmen", "done": false}, {"id": "4df1bf1829", "text": "H15.5 Differentiaalrekenen", "done": false}, {"id": "b86e61074c", "text": "H15.6 Onderzoeksopgaven", "done": false}, {"id": "9e92bf2657", "text": "§1 Math with menno", "done": false}, {"id": "7c3309ce37", "text": "§2 Math with menno", "done": false}, {"id": "e43cf48fb7", "text": "§3 Math with menno", "done": false}, {"id": "e72dde4e9c", "text": "§4 Math with menno", "done": false}, {"id": "df44c8dfa1", "text": "§5 Math with menno", "done": false}, {"id": "23625f4699", "text": "§6 Math with menno", "done": false}, {"id": "427b3ce499", "text": "Opgaven in boek (1)", "done": false}, {"id": "eeb731323f", "text": "Opgaven in boek (2)", "done": false}, {"id": "2f2fea3e08", "text": "Opgaven in boek (3)", "done": false}, {"id": "543bc0cf5e", "text": "Opgaven in boek (4)", "done": false}, {"id": "63f35662f8", "text": "Opgaven in boek (5)", "done": false}, {"id": "59bd15bb0d", "text": "Opgaven in boek (6)", "done": false}, {"id": "816882f3b0", "text": "Examen (1)", "done": false}, {"id": "b7c74f7419", "text": "Examen (2)", "done": false}, {"id": "02b8e7cc8a", "text": "Examen (3)", "done": false}, {"id": "817bb8565e", "text": "Herhalen (1)", "done": false}, {"id": "a9ef31252c", "text": "Herhalen (2)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "c1d0e0ca6f", "subject": "Aardrijkskunde", "date": "2026-05-18", "time": "", "location": "", "priority": "middel", "difficulty": 5, "totalHours": 68, "notes": "Streefcijfer: 8.16 · Voldoende: 4.16 · Risico: groen", "topics": [{"id": "f05e326603", "text": "Wereld H1", "done": false}, {"id": "cc511b161a", "text": "Wereld H2", "done": false}, {"id": "471e590da7", "text": "Wereld H3", "done": false}, {"id": "c07f9460fa", "text": "Wereld H4", "done": false}, {"id": "ec178d5606", "text": "Wereld Begrippen (1)", "done": false}, {"id": "0a03cadc46", "text": "Wereld Begrippen (2)", "done": false}, {"id": "030e32a646", "text": "Wereld opdrachten (1)", "done": false}, {"id": "a838e9f9d3", "text": "Wereld opdrachten (2)", "done": false}, {"id": "8cf8d71d83", "text": "Aarde H1", "done": false}, {"id": "3309923d04", "text": "Aarde H2", "done": false}, {"id": "ecb7e754c7", "text": "Aarde H3", "done": false}, {"id": "6cce82a72d", "text": "Aarde H4", "done": false}, {"id": "062c01c8db", "text": "Aarde Begrippen (1)", "done": false}, {"id": "f3c2e6963d", "text": "Aarde Begrippen (2)", "done": false}, {"id": "b0b685588b", "text": "Aarde opdrachten (1)", "done": false}, {"id": "b676714554", "text": "Aarde opdrachten (2)", "done": false}, {"id": "0baa037080", "text": "Zuid-Amerika H1", "done": false}, {"id": "a31b5fba78", "text": "Zuid-Amerika H2", "done": false}, {"id": "ae20ecfe5f", "text": "Zuid-Amerika H3", "done": false}, {"id": "6944f1429b", "text": "Zuid-Amerika H4", "done": false}, {"id": "fea585cd05", "text": "Zuid-Amerika Begrippen (1)", "done": false}, {"id": "ad1e1070ab", "text": "Zuid-Amerika Begrippen (2)", "done": false}, {"id": "f647741e5f", "text": "Zuid-Amerika opdrachten (1)", "done": false}, {"id": "5ee4f5ab5f", "text": "Zuid-Amerika opdrachten (2)", "done": false}, {"id": "749ddcbf84", "text": "Wonen in Nederland H1", "done": false}, {"id": "42ba83a25d", "text": "Wonen in Nederland H2", "done": false}, {"id": "0db65a822a", "text": "Wonen in Nederland H3", "done": false}, {"id": "7333e98baf", "text": "Wonen in Nederland H4", "done": false}, {"id": "63116566a2", "text": "Wonen in Nederland Begrippen (1)", "done": false}, {"id": "5f39a52ec0", "text": "Wonen in Nederland Begrippen (2)", "done": false}, {"id": "3290c61c67", "text": "Wonen in Nederland opdrachten (1)", "done": false}, {"id": "7ccb8f6d42", "text": "Wonen in Nederland opdrachten (2)", "done": false}, {"id": "122076408a", "text": "Examen (1)", "done": false}, {"id": "9ac56b4521", "text": "Examen (2)", "done": false}, {"id": "d593f87ce9", "text": "Herhalen (1)", "done": false}, {"id": "df88e096b3", "text": "Herhalen (2)", "done": false}, {"id": "997b3cd8d7", "text": "Herhalen (3)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "2b8b1f9285", "subject": "Engels", "date": "2026-05-20", "time": "", "location": "", "priority": "laag", "difficulty": 2, "totalHours": 10, "notes": "Streefcijfer: 6.64 · Voldoende: 4.59 · Risico: groen", "topics": [{"id": "a19d301277", "text": "Examen (1)", "done": true}, {"id": "20e871908f", "text": "Examen (2)", "done": false}, {"id": "16f13138ea", "text": "Examen (3)", "done": false}, {"id": "62c2770899", "text": "Veelvoorkomende woorden (1)", "done": false}, {"id": "a592702b0a", "text": "Veelvoorkomende woorden (2)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "b826c9252a", "subject": "Economie", "date": "2026-05-21", "time": "", "location": "", "priority": "hoog", "difficulty": 5, "totalHours": 60, "notes": "⚠️ Streefcijfer: 7.26 · Voldoende: 5.26 · Risico: ORANJE — hoogste prioriteit!", "topics": [{"id": "b02ed34de5", "text": "H1 Geldzaken", "done": false}, {"id": "d64ea225bd", "text": "2.1 + 2.2", "done": false}, {"id": "4c3f988e42", "text": "2.3 + 2.4", "done": false}, {"id": "e705a03eb4", "text": "3.1 Speltheorie", "done": false}, {"id": "a0de9a543d", "text": "4.1 + 4.2", "done": false}, {"id": "cf2c3cf86f", "text": "4.3 + 4.4", "done": false}, {"id": "08f4343e50", "text": "4.5", "done": false}, {"id": "a53ded11fc", "text": "5.1 + 5.2", "done": false}, {"id": "461d633896", "text": "5.3", "done": false}, {"id": "f991465739", "text": "5.4", "done": false}, {"id": "1833ee7339", "text": "6.1", "done": false}, {"id": "164cf806a1", "text": "6.2", "done": false}, {"id": "5e97caece2", "text": "6.3", "done": false}, {"id": "b5d4cc3a0c", "text": "6.4", "done": false}, {"id": "d355b6ceaa", "text": "6.5", "done": false}, {"id": "b1c79d4195", "text": "Examentraining H1", "done": false}, {"id": "7de5fda272", "text": "Examentraining Domein D", "done": false}, {"id": "86a698e677", "text": "Examentraining Domein E G H", "done": false}, {"id": "0b84458599", "text": "Examentraining Domein F", "done": false}, {"id": "d5379905c5", "text": "Examentraining Domein I", "done": false}, {"id": "61b5f36e71", "text": "Examentraining ISBMGA-model", "done": false}, {"id": "fef793dd07", "text": "Examen (1)", "done": false}, {"id": "8022d55248", "text": "Examen (2)", "done": false}, {"id": "4f8c290ed9", "text": "Examen (3)", "done": false}, {"id": "bf6c0efb70", "text": "Examen (4)", "done": false}, {"id": "43daebecda", "text": "Herhalen (1)", "done": false}, {"id": "82bba596ce", "text": "Herhalen (2)", "done": false}, {"id": "5c833a76c1", "text": "Herhalen (3)", "done": false}, {"id": "3b88c861b3", "text": "Herhalen (4)", "done": false}, {"id": "965dde600b", "text": "Herhalen (5)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "aac2f6d58f", "subject": "Grieks", "date": "2026-05-22", "time": "", "location": "", "priority": "middel", "difficulty": 4, "totalHours": 48, "notes": "Streefcijfer: 6.88 · Voldoende: 4.88 · Risico: groen", "topics": [{"id": "3842dbca5e", "text": "Vertalen: Alle grammatica", "done": false}, {"id": "45eab6089b", "text": "Vertalen (1)", "done": false}, {"id": "b0a904c677", "text": "Vertalen (2)", "done": false}, {"id": "d34d36b5c2", "text": "Vertalen (3)", "done": false}, {"id": "29ac2641c8", "text": "Vertalen (4)", "done": false}, {"id": "67a6825e8a", "text": "Verklaren: H1 Prooemium", "done": false}, {"id": "65a31e69cc", "text": "Verklaren: H3 Ogygia", "done": false}, {"id": "12dac90a3c", "text": "Verklaren: H5 Onderwereld", "done": false}, {"id": "b5fe31388d", "text": "Verklaren: H8 Odysseus op Ithaka", "done": false}, {"id": "d39044b2a2", "text": "Verklaren: H10 Wraak", "done": false}, {"id": "c27480310c", "text": "H1 vraag 1-9", "done": false}, {"id": "81ef7701d9", "text": "H3 vraag 1-28", "done": false}, {"id": "f10410be6e", "text": "H5 vraag 1-24", "done": false}, {"id": "7b64f64f72", "text": "H8 vraag 1-31", "done": false}, {"id": "900b201314", "text": "H10 vraag 1-58", "done": false}, {"id": "0a07a6d9f1", "text": "Stijlmiddelen", "done": false}, {"id": "df582b5d67", "text": "Scanderen", "done": false}, {"id": "308ff537ff", "text": "Herhalen (1)", "done": false}, {"id": "3cd45d8cf3", "text": "Herhalen (2)", "done": false}, {"id": "dc53f9a300", "text": "Herhalen (3)", "done": false}, {"id": "8eae1dc16c", "text": "Herhalen (4)", "done": false}, {"id": "1ec2c74a6d", "text": "Examen (1)", "done": false}, {"id": "385b46ab5f", "text": "Examen (2)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}, {"id": "abe32368d9", "subject": "Biologie", "date": "2026-05-22", "time": "", "location": "", "priority": "middel", "difficulty": 5, "totalHours": 66, "notes": "Streefcijfer: 6.85 · Voldoende: 4.35 · Risico: groen", "topics": [{"id": "0be809a173", "text": "H1 Inleiding biologie", "done": false}, {"id": "3bad76460d", "text": "H2 Voortplanting (zonder seksualiteit)", "done": false}, {"id": "ca65584d0c", "text": "H3 Genetica", "done": false}, {"id": "20d233a284", "text": "H4 Evolutie (behalve uitzonderingen)", "done": false}, {"id": "50114ecd9c", "text": "H5 Ecologie", "done": false}, {"id": "0855a10c73", "text": "H6 Mens en milieu", "done": false}, {"id": "3a6bf55198", "text": "H7 Regeling (zonder spieren en beweging)", "done": false}, {"id": "a6341e2136", "text": "H9 Stofwisseling", "done": false}, {"id": "60fa365454", "text": "H10 DNA (zonder replicatie)", "done": false}, {"id": "4a75eeec4e", "text": "H11 Planten", "done": false}, {"id": "a0277a8ccf", "text": "H12 Vertering", "done": false}, {"id": "930839f3b7", "text": "H13 Transport", "done": false}, {"id": "8fecbe0289", "text": "H14 Gaswisseling & uitscheiding", "done": false}, {"id": "58af61b070", "text": "H15 Afweer", "done": false}, {"id": "3f0afa8d09", "text": "H16 Samenhang", "done": false}, {"id": "149e545941", "text": "Test jezelf (1)", "done": false}, {"id": "f4b8168000", "text": "Test jezelf (2)", "done": false}, {"id": "603d024e19", "text": "Test jezelf (3)", "done": false}, {"id": "7508902352", "text": "Test jezelf (4)", "done": false}, {"id": "03407266af", "text": "Biologiepagina Oefeningen (1)", "done": false}, {"id": "0f48a9cb96", "text": "Biologiepagina Oefeningen (2)", "done": false}, {"id": "b780775b79", "text": "Biologiepagina Oefeningen (3)", "done": false}, {"id": "9756e95fbf", "text": "Biologiepagina Oefeningen (4)", "done": false}, {"id": "07ab8fd828", "text": "Begrippen leren (1)", "done": false}, {"id": "6601eaaeab", "text": "Begrippen leren (2)", "done": false}, {"id": "899afebf75", "text": "Begrippen leren (3)", "done": false}, {"id": "3153a18aa7", "text": "Begrippen leren (4)", "done": false}, {"id": "36e86ab424", "text": "Examen (1)", "done": false}, {"id": "fd1edfe84d", "text": "Examen (2)", "done": false}, {"id": "472705ff31", "text": "Examen (3)", "done": false}, {"id": "711bc152ed", "text": "Herhalen (1)", "done": false}, {"id": "d780f86d8b", "text": "Herhalen (2)", "done": false}, {"id": "884a87e4a9", "text": "Herhalen (3)", "done": false}], "manualProgress": 0, "createdAt": "2026-04-21T20:32:42.819895"}];
+
+// Init
 loadSettings();
 load();
 if (exams.length === 0 && !localStorage.getItem('examen-planner-seeded')) {
@@ -1160,6 +3010,7 @@ syncSettingsUI();
 if (localStorage.getItem('examen-theme') === 'light') document.body.classList.add('light');
 render();
 
+// Reset button to reload original data
 window.resetToPreloaded = function() {
   if (confirm('Wil je ALLE examens terugzetten naar de originele planning uit de PDF? Dit verwijdert alle wijzigingen.')) {
     exams = JSON.parse(JSON.stringify(PRELOADED_EXAMS));
@@ -1168,7 +3019,9 @@ window.resetToPreloaded = function() {
   }
 };
 
+// Refresh every minute to update countdowns
 setInterval(render, 60000);
 </script>
-</body>
-</html>
+
+
+</body></html>
